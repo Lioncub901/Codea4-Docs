@@ -196,6 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tween.html">tween</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui.html">ui</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
@@ -207,6 +208,8 @@
 <li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics2d.html">physics2d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics3d.html">physics3d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tilemap.html">tilemap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation.html">animation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pick.html">pick</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer.html">viewer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device.html">device</a></li>
@@ -320,6 +323,24 @@
 </dd></dl>
 
 <dl class="lua attribute">
+<dt class="sig sig-object lua" id="scene.physics2d">
+<span class="sig-name descname"><span class="pre">physics2d</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">physics2d.settings</span><a class="headerlink" href="#scene.physics2d" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the scene’s 2D physics settings, providing access to various physics functions and properties such as <code class="xref lua lua-meth docutils literal notranslate"><span class="pre">physics2d.settings.debugDraw()</span></code></p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="scene.physics3d">
+<span class="sig-name descname"><span class="pre">physics3d</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">physics3d.settings</span><a class="headerlink" href="#scene.physics3d" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the scene’s 3D physics settings, providing access to various physics functions and properties such as <code class="xref lua lua-meth docutils literal notranslate"><span class="pre">physics3d.settings.debugDraw()</span></code></p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="scene.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">time.settings</span><a class="headerlink" href="#scene.time" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the scene’s time settings, providing access to various time functions and properties such as <a class="reference internal" href="time.html#time.settings.autoUpdate" title="time.settings.autoUpdate"><code class="xref lua lua-meth docutils literal notranslate"><span class="pre">time.settings.autoUpdate()</span></code></a></p>
+</dd></dl>
+
+<dl class="lua attribute">
 <dt class="sig sig-object lua" id="scene.sky">
 <span class="sig-name descname"><span class="pre">sky</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">None</span><a class="headerlink" href="#scene.sky" title="Link to this definition">¶</a></dt>
 <dd><p>Sets the sky visuals, which will depend on the type used:</p>
@@ -410,14 +431,60 @@
 
 <dl class="lua method">
 <dt class="sig sig-object lua" id="scene.entities">
-<em class="property"> </em><span class="sig-name descname"><span class="pre">entities</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">activeOnly</span> <span class="pre">=</span> <span class="pre">true</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#scene.entities" title="Link to this definition">¶</a></dt>
-<dd><p>Returns a table containing all root entities</p>
+<em class="property"> </em><span class="sig-name descname"><span class="pre">entities</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">includeFlag</span> <span class="pre">=</span> <span class="pre">scene.DEFAULT</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#scene.entities" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a table containing entities in the scene</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>activeOnly</strong> – When set, returns only active root entities</p>
+<dd class="field-odd"><p><strong>includeFlag</strong> – Flag to include certain entities.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><span><a class="reference internal" href="#scene.entity" title="scene.entity"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">table</span></code></a></span></p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scene.DEFAULT</span></code> - only active entities <em>not including the children</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scene.INACTIVE</span></code> - include inactive entities</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scene.CHILDREN</span></code> - include all the children and sub childrens of the entities</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scene.ALL</span></code> - include all entities in the scene: <code class="docutils literal notranslate"><span class="pre">scene.INACTIVE</span> <span class="pre">|</span> <span class="pre">scene.CHILDREN</span></code></p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Getting all the entities</span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nv">scen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">scene</span><span class="p">.</span><span class="nf">default2d</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+
+<span class="nv">enti</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">scen</span><span class="p">:</span><span class="nf">entity</span><span class="p">(</span><span class="s2">&quot;enti&quot;</span><span class="p">)</span>
+<span class="nv">childEnti</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">enti</span><span class="p">:</span><span class="nf">child</span><span class="p">(</span><span class="s2">&quot;childEnti&quot;</span><span class="p">)</span>
+
+<span class="nv">otherEnti</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">scen</span><span class="p">:</span><span class="nf">entity</span><span class="p">(</span><span class="s2">&quot;otherEnti&quot;</span><span class="p">)</span>
+<span class="nv">otherEnti</span><span class="p">.</span><span class="py">active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+
+<span class="c1">-- include only enti (you could input scene.DEFAULT in parameter for same result)</span>
+<span class="nv">entityList1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">scen</span><span class="p">:</span><span class="nf">entities</span><span class="p">()</span>
+
+<span class="c1">-- include only enti and childEnti</span>
+<span class="nv">entityList2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">scen</span><span class="p">:</span><span class="nf">entities</span><span class="p">(</span><span class="nv">scene</span><span class="p">.</span><span class="py">CHILDREN</span><span class="p">)</span>
+
+<span class="c1">-- include only enti and otherEnti (no children included)</span>
+<span class="nv">entityList2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">scen</span><span class="p">:</span><span class="nf">entities</span><span class="p">(</span><span class="nv">scene</span><span class="p">.</span><span class="py">INACTIVE</span><span class="p">)</span>
+
+<span class="c1">-- loop over all entities in the scene (can use scene.ALL instead)</span>
+<span class="nv">scen</span><span class="p">:</span><span class="nf">forEach</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">currentEnti</span><span class="p">)</span>
+<span class="w">   </span><span class="nb">print</span><span class="p">(</span><span class="nv">currentEnti</span><span class="p">.</span><span class="py">name</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">,</span><span class="w"> </span><span class="nv">scene</span><span class="p">.</span><span class="py">INACTIVE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">scene</span><span class="p">.</span><span class="py">CHILDREN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="scene.forEach">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">forEach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loopFunction</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">includeFlag</span> <span class="pre">=</span> <span class="pre">scene.DEFAULT</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#scene.forEach" title="Link to this definition">¶</a></dt>
+<dd><p>Inputs a callback to that is called while looping over entities in the scene</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>loopFunction</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">function(entity)</span></code></span>) – Function to loop over</p></li>
+<li><p><strong>includeFlag</strong> – Flag to include certain entities.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>

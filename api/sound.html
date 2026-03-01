@@ -196,6 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tween.html">tween</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui.html">ui</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
@@ -207,6 +208,8 @@
 <li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics2d.html">physics2d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics3d.html">physics3d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tilemap.html">tilemap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation.html">animation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pick.html">pick</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer.html">viewer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device.html">device</a></li>
@@ -401,6 +404,12 @@
 <dd><p>Gets the length of this sound source (in seconds)</p>
 </dd></dl>
 
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="sound.sound.source.key">
+<span class="sig-name descname"><span class="pre">key</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">assetKey</span><a class="headerlink" href="#sound.sound.source.key" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>The asset key for this sound (if it has one)</p>
 </dd></dl>
 
 <dl class="lua class">
@@ -436,6 +445,30 @@
 <dt class="sig sig-object lua" id="sound.sound.instance.time">
 <span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#sound.sound.instance.time" title="Link to this definition">¶</a></dt>
 <dd><p>Get/set the current time of the sound instances play head (in seconds)</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="sound.sound.instance.samplerate">
+<span class="sig-name descname"><span class="pre">samplerate</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#sound.sound.instance.samplerate" title="Link to this definition">¶</a></dt>
+<dd><p>Get the samplerate of the sound instance</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="sound.sound.instance.amplitude">
+<span class="sig-name descname"><span class="pre">amplitude</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#sound.sound.instance.amplitude" title="Link to this definition">¶</a></dt>
+<dd><p>Get the amplitude of the sound instance at the current time</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="sound.sound.instance.wave">
+<span class="sig-name descname"><span class="pre">wave</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">table&lt;number&gt;</span><a class="headerlink" href="#sound.sound.instance.wave" title="Link to this definition">¶</a></dt>
+<dd><p>Get the wave data of the sound instance at the current time</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="sound.sound.instance.fft">
+<span class="sig-name descname"><span class="pre">fft</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">table&lt;number&gt;</span><a class="headerlink" href="#sound.sound.instance.fft" title="Link to this definition">¶</a></dt>
+<dd><p>Get the fft data of the sound instance at the current time</p>
 </dd></dl>
 
 <dl class="lua method">

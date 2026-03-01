@@ -196,6 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tween.html">tween</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui.html">ui</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
@@ -207,6 +208,8 @@
 <li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics2d.html">physics2d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics3d.html">physics3d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tilemap.html">tilemap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation.html">animation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pick.html">pick</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer.html">viewer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device.html">device</a></li>
@@ -372,6 +375,12 @@
 </pre></div>
 </div>
 </details></dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="entity.destroyChildren">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">destroyChildren</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#entity.destroyChildren" title="Link to this definition">¶</a></dt>
+<dd><p>Destroys all the children of an entity</p>
+</dd></dl>
 
 <p><strong>Components</strong></p>
 <dl class="lua method">
@@ -892,6 +901,19 @@
 <dd><p>Callback for the <cite>destroyed()</cite> event, which is called right before the entity is destroyed</p>
 </dd></dl>
 
+<p><strong>Activation Callbacks</strong></p>
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="entity.activated">
+<span class="sig-name descname"><span class="pre">activated</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">function</span><a class="headerlink" href="#entity.activated" title="Link to this definition">¶</a></dt>
+<dd><p>Callback for the <code class="docutils literal notranslate"><span class="pre">activated()</span></code> event, which is called when <code class="docutils literal notranslate"><span class="pre">entity.active</span></code> is set to true</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="entity.deactivated">
+<span class="sig-name descname"><span class="pre">deactivated</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">function</span><a class="headerlink" href="#entity.deactivated" title="Link to this definition">¶</a></dt>
+<dd><p>Callback for the <code class="docutils literal notranslate"><span class="pre">deactivated()</span></code> event, which is called when <code class="docutils literal notranslate"><span class="pre">entity.active</span></code> is set to false</p>
+</dd></dl>
+
 <p><strong>Physics Callbacks</strong></p>
 <dl class="lua attribute">
 <dt class="sig sig-object lua" id="entity.collisionBegan2d">
@@ -930,6 +952,12 @@
 <dt class="sig sig-object lua" id="entity.hitTest">
 <span class="sig-name descname"><span class="pre">hitTest</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">boolean</span> <span class="pre">[default</span> <span class="pre">=</span> <span class="pre">false]</span><a class="headerlink" href="#entity.hitTest" title="Link to this definition">¶</a></dt>
 <dd><p>Enables hit testing for the <code class="docutils literal notranslate"><span class="pre">touched(touch)</span></code> event, which will filter touches based on collision checks using attached physics components on the main camera</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="entity.touchPriority">
+<span class="sig-name descname"><span class="pre">touchPriority</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span> <span class="pre">[default</span> <span class="pre">=</span> <span class="pre">0]</span><a class="headerlink" href="#entity.touchPriority" title="Link to this definition">¶</a></dt>
+<dd><p>Sets the priority of entity in <code class="docutils literal notranslate"><span class="pre">touched(touch)</span></code> event</p>
 </dd></dl>
 
 </dd></dl>

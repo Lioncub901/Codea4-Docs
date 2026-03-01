@@ -196,6 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tween.html">tween</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui.html">ui</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
@@ -207,6 +208,8 @@
 <li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics2d.html">physics2d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics3d.html">physics3d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tilemap.html">tilemap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation.html">animation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pick.html">pick</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer.html">viewer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device.html">device</a></li>
@@ -1095,7 +1098,237 @@
 <dl class="lua class" id="module-bounds">
 <dt class="sig sig-object lua" id="bounds.aabb">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bounds.</span></span><span class="sig-name descname"><span class="pre">aabb</span></span><a class="headerlink" href="#bounds.aabb" title="Link to this definition">¶</a></dt>
+<dd><dl class="lua attribute">
+<dt class="sig sig-object lua" id="bounds.bounds.aabb.min">
+<span class="sig-name descname"><span class="pre">min</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">vec3</span><a class="headerlink" href="#bounds.bounds.aabb.min" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="bounds.bounds.aabb.max">
+<span class="sig-name descname"><span class="pre">max</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">vec3</span><a class="headerlink" href="#bounds.bounds.aabb.max" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="bounds.bounds.aabb.size">
+<span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">vec3</span><a class="headerlink" href="#bounds.bounds.aabb.size" title="Link to this definition">¶</a></dt>
+<dd><p>Size of the bounding box</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="bounds.bounds.aabb.offect">
+<span class="sig-name descname"><span class="pre">offect</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">vec3</span><a class="headerlink" href="#bounds.bounds.aabb.offect" title="Link to this definition">¶</a></dt>
+<dd><p>Offset of the bounding box</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="bounds.bounds.aabb.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">boolean</span><a class="headerlink" href="#bounds.bounds.aabb.valid" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if the bounding box is valid</p>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="bounds.aabb.set">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">min</span></em>, <em class="sig-param"><span class="pre">max</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bounds.aabb.set" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> (<span><a class="reference internal" href="#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – The minimum position of the bounding box</p></li>
+<li><p><strong>max</strong> (<span><a class="reference internal" href="#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – The maximum position of the bounding box</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="bounds.aabb.translate">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">amount</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bounds.aabb.translate" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>amount</strong> (<span><a class="reference internal" href="#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – The amount to move the bounding box</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="bounds.aabb.transform">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">transformMatrix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bounds.aabb.transform" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>transformMatrix</strong> (<span><a class="reference internal" href="#mat4" title="mat4"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">mat4</span></code></a></span>) – The matrix used to transform the current matrix</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New bounds to fit the transformed bound</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#bounds.aabb" title="bounds.aabb"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">aabb</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="bounds.aabb.encapsulate">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">encapsulate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bounds.aabb.encapsulate" title="Link to this definition">¶</a></dt>
+<dd><p>Adjust the bound to fit a point</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>point</strong> (<span><a class="reference internal" href="#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – The point you want to fit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">encapsulate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">otherAABB</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Adjust the bound to fit another bound</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>otherAABB</strong> (<span><a class="reference internal" href="#bounds.aabb" title="bounds.aabb"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">aabb</span></code></a></span>) – The aabb you want to fit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="bounds.aabb.raycast">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">raycast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">origin</span></em>, <em class="sig-param"><span class="pre">dir</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bounds.aabb.raycast" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin</strong> (<span><a class="reference internal" href="#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – The position of the ray</p></li>
+<li><p><strong>dir</strong> (<span><a class="reference internal" href="#mat4" title="mat4"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">mat4</span></code></a></span>) – The direction of the ray</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The hit infomation of the raycast</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#bounds.hit" title="bounds.hit"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">hit</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="lua class">
+<dt class="sig sig-object lua" id="bounds.hit">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bounds.</span></span><span class="sig-name descname"><span class="pre">hit</span></span><a class="headerlink" href="#bounds.hit" title="Link to this definition">¶</a></dt>
+<dd><dl class="lua attribute">
+<dt class="sig sig-object lua" id="bounds.bounds.hit.point">
+<span class="sig-name descname"><span class="pre">point</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">vec3</span><a class="headerlink" href="#bounds.bounds.hit.point" title="Link to this definition">¶</a></dt>
+<dd><p>The position where the raycast hit</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="bounds.bounds.hit.normal">
+<span class="sig-name descname"><span class="pre">normal</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">vec3</span><a class="headerlink" href="#bounds.bounds.hit.normal" title="Link to this definition">¶</a></dt>
+<dd><p>The normal of the point hit</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="math-extensions">
+<h2>Math Extensions<a class="headerlink" href="#math-extensions" title="Link to this heading">¶</a></h2>
+<dl class="lua class">
+<dt class="sig sig-object lua" id="math">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">math</span></span><a class="headerlink" href="#math" title="Link to this definition">¶</a></dt>
+<dd><p>The following are extensions to the Lua math class.</p>
+<dl class="lua method">
+<dt class="sig sig-object lua" id="math.lerp">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">a</span></em>, <em class="sig-param"><span class="pre">b</span></em>, <em class="sig-param"><span class="pre">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#math.lerp" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The first point</p></li>
+<li><p><strong>b</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The second point</p></li>
+<li><p><strong>t</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Value between 0 and 1 to represent the progress between a and b</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value that is t% between a and b</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="math.inverseLerp">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">inverseLerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">a</span></em>, <em class="sig-param"><span class="pre">b</span></em>, <em class="sig-param"><span class="pre">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#math.inverseLerp" title="Link to this definition">¶</a></dt>
+<dd><p>Give the t (progress) value that v is in a and b</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The first point</p></li>
+<li><p><strong>b</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The second point</p></li>
+<li><p><strong>v</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Value between a and b</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The t (progress) that v is between a and b</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="math.sign">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#math.sign" title="Link to this definition">¶</a></dt>
+<dd><p>if value &lt; 0 then -1, if value == 0 then 0, if value &gt; 0 then 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The value to take the sign of</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sign of the value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="math.clamp">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">clamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">a</span></em>, <em class="sig-param"><span class="pre">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#math.clamp" title="Link to this definition">¶</a></dt>
+<dd><p>Give the clamp value between a and b, value less than <cite>a</cite> the function outputs <cite>a</cite> and value greater than <cite>b</cite> the function outputs <cite>b</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The value to clamp</p></li>
+<li><p><strong>a</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The left end of the clamp</p></li>
+<li><p><strong>b</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The right end of the clamp</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The t (progress) that v is between a and b</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="math.clamp01">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">clamp01</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#math.clamp01" title="Link to this definition">¶</a></dt>
+<dd><p>Clamp value between 0 and 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The value to clamp</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The clamped value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
 
 </section>
 </section>
@@ -1165,6 +1398,7 @@
 <li><a class="reference internal" href="#x3-matrix">3x3 Matrix</a></li>
 <li><a class="reference internal" href="#x4-matrix">4x4 Matrix</a></li>
 <li><a class="reference internal" href="#axis-aligned-bounding-box-aabb">Axis-Aligned Bounding Box (AABB)</a></li>
+<li><a class="reference internal" href="#math-extensions">Math Extensions</a></li>
 </ul>
 </li>
 </ul>

@@ -1,0 +1,1012 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="animation" href="animation.html" /><link rel="prev" title="physics3d" href="physics3d.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.01.29 -->
+        <title>tilemap - Codea 4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Codea 4.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/icon.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Codea 4.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Manual:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manual.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/codea_3x.html">Migration from Codea 3.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/codea.html">How Codea Works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/drawing.html">Drawing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/sound.html">Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/assets.html">Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/file_operations.html">File Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/input.html">Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/physics2d.html">2D Physics (Box 2D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/physics3d.html">3D Physics (Bullet 3D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/scenes.html">Scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/shaders.html">Shaders and Materials</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua.html">lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math_types.html">math types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color.html">color</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">graphics commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style.html">style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix.html">matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image.html">Images Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image.html#image">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mesh.html">mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shader.html">shader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string.html">string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu_noise_lib.html">GPU Noise Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html">material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sound.html">sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scene.html">scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entity.html">entity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tween.html">tween</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">ui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html#device-orientation">Device Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html#magnetic-field-data">Magnetic Field Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="require.html">require</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objc.html">objc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pasteboard.html">pasteboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physics2d.html">physics2d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physics3d.html">physics3d</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">tilemap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation.html">animation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pick.html">pick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewer.html">viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device.html">device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="storage.html">storage</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="tilemap">
+<h1>tilemap<a class="headerlink" href="#tilemap" title="Link to this heading">¶</a></h1>
+<p>Api for creating tile maps</p>
+<dl class="simple">
+<dt><strong>It Contains</strong></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tm.tiles</span></code> - infomation on a single tile</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tm.ruleset</span></code> - infomation on how sprites should behavior in a tile</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tm.tileset</span></code> - collection of tiles used in the scene</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tm.layer</span></code> - the placement of tiles in the single layer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tm.tilemap</span></code> - the grouping of tilemap layers to draw to the scene</p></li>
+</ul>
+</dd>
+</dl>
+<section id="tile">
+<span id="module-tm"></span><h2>Tile<a class="headerlink" href="#tile" title="Link to this heading">¶</a></h2>
+<dl class="lua class">
+<dt class="sig sig-object lua" id="tm.tile">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tm.</span></span><span class="sig-name descname"><span class="pre">tile</span></span><a class="headerlink" href="#tm.tile" title="Link to this definition">¶</a></dt>
+<dd><div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">How to use tile</span><a class="headerlink" href="#id2" title="Link to this code">¶</a></div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nv">myTileset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">tm</span><span class="p">.</span><span class="nf">tileset</span><span class="p">()</span>
+
+<span class="nv">newTile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">myTileset</span><span class="p">:</span><span class="nf">tile</span><span class="p">()</span>
+
+<span class="nv">newTile</span><span class="p">:</span><span class="nf">sprite</span><span class="p">(</span><span class="nv">asset</span><span class="p">.</span><span class="py">dirtTile</span><span class="p">):</span><span class="nf">group</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span><span class="nf">collision</span><span class="p">(</span><span class="nv">tm</span><span class="p">.</span><span class="py">collision</span><span class="p">.</span><span class="py">square</span><span class="p">)</span>
+<span class="w">    </span><span class="p">:</span><span class="nf">ruleset</span><span class="p">(</span><span class="nv">myRuleSet</span><span class="p">)</span>
+
+<span class="nv">spriteImg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">newTile</span><span class="p">:</span><span class="nf">sprite</span><span class="p">()</span>
+<span class="nv">theRuleset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">newTile</span><span class="p">:</span><span class="nf">ruleset</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="tm.tm.tile.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#tm.tm.tile.id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.tile.sprite">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">sprite</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">spriteIcon</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.tile.sprite" title="Link to this definition">¶</a></dt>
+<dd><p>Set/Get the sprite image of the tile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>spriteIcon</strong> (<span><a class="reference internal" href="graphics.html#sprite" title="sprite"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">sprite</span></code></a></span>) – The image that the tile contains</p>
+</dd>
+</dl>
+<p>No parameter:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The sprite image</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><a class="reference internal" href="graphics.html#sprite" title="sprite"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">sprite</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.tile.group">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">groupNum</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.tile.group" title="Link to this definition">¶</a></dt>
+<dd><p>Set the sprite image of the tile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>groupNum</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The group number the tile is from</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>self for function chaining</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.tile" title="tm.tile"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">tile</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.tile.collision">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">collision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mode</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.tile.collision" title="Link to this definition">¶</a></dt>
+<dd><p>Set the collision mode of the tile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mode</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">enum</span></code></span>) – The enum of the collision</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>self for function chaining</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.tile" title="tm.tile"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">tile</span></code></a></span></p>
+</dd>
+</dl>
+<p><strong>Collision Mode Enum:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tm.collision.none</span></code> - no collision</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tm.collision.square</span></code> - for square collision</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tm.collision.sprite</span></code> - for sprite collision</p></li>
+</ul>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.tile.ruleset">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">ruleset</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">theRuleset</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.tile.ruleset" title="Link to this definition">¶</a></dt>
+<dd><p>Set/Get the ruleset of the tile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>theRuleset</strong> (<span><a class="reference internal" href="#tm.ruleset" title="tm.ruleset"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">tm.ruleset</span></code></a></span>) – The ruleset to be applied to the tile</p>
+</dd>
+</dl>
+<p>No parameter:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The ruleset of the tile</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><a class="reference internal" href="#tm.ruleset" title="tm.ruleset"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">tm.ruleset</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="ruleset">
+<h2>Ruleset<a class="headerlink" href="#ruleset" title="Link to this heading">¶</a></h2>
+<dl class="lua class">
+<dt class="sig sig-object lua" id="tm.ruleset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tm.</span></span><span class="sig-name descname"><span class="pre">ruleset</span></span><a class="headerlink" href="#tm.ruleset" title="Link to this definition">¶</a></dt>
+<dd><p>A ruleset is a object to allows the user to determine how the same tiles should a aranged using certain rules.
+Having a ruleset simplify the creation of tilemap as common patterns can be set as a rule</p>
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.ruleset.rule">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">rule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.ruleset.rule" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a rule in the ruleset and select it. Following ruleset functions will apply to this rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>self for function chaining.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><a class="reference internal" href="#tm.ruleset" title="tm.ruleset"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">ruleset</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua">
+<span class="sig-name descname"><span class="pre">[index]</span> <span class="pre">(ruleNum)</span></span></dt>
+<dd><p>Select the rule in the ruleset. Following ruleset functions will apply to this rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ruleNum</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">integer</span></code></span>) – the index of the rule in the ruleset</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>self for function chaining</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.ruleset" title="tm.ruleset"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">ruleset</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p><strong>Below happens to rule created above</strong></p>
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.ruleset.sprite">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">sprite</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">spriteIcon</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.ruleset.sprite" title="Link to this definition">¶</a></dt>
+<dd><p>Set/Get the sprite image of the rule</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>spriteIcon</strong> (<span><a class="reference internal" href="graphics.html#sprite" title="sprite"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">sprite</span></code></a></span>) – The image that the rule contains</p>
+</dd>
+</dl>
+<p>No parameter:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>One sprite image for regular and a table for <cite>random</cite></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><a class="reference internal" href="graphics.html#sprite" title="sprite"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">sprite</span> <span class="pre">or</span> <span class="pre">table</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.ruleset.random">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">random</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">spriteList</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.ruleset.random" title="Link to this definition">¶</a></dt>
+<dd><p>Set the sprite that will be randomly selected (good for dirt tiles)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>spriteList</strong> (<span><a class="reference internal" href="graphics.html#sprite" title="sprite"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">table</span></code></a></span>) – The images that the rule contains</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>self for function chaining</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.ruleset" title="tm.ruleset"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">ruleset</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.ruleset.area">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">row1</span></em>, <em class="sig-param"><span class="pre">...</span></em>, <em class="sig-param"><span class="pre">rowX</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.ruleset.area" title="Link to this definition">¶</a></dt>
+<dd><p>Set the tile area rule to determine with sprite should be display in the correct spot. The rows must be a old number 3 - 7. Rows and cols should be the same length</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rowX</strong> – The layout of the tile (sprite) with other tiles</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;</span></code> - center tile</p></li>
+<li><p>` ` - ignore tile (empty space)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=</span></code> - this tile</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> - not this tile</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g</span></code> - tiles of the same group</p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">How to use area</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span><span class="w"> </span><span class="nv">wallRules</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">tm</span><span class="p">.</span><span class="nf">ruleset</span><span class="p">()</span>
+
+<span class="nv">wallRules</span><span class="p">:</span><span class="nf">rule</span><span class="p">():</span><span class="nf">sprite</span><span class="p">(</span><span class="nv">setImgAtlas</span><span class="p">.</span><span class="py">c4r2</span><span class="p">)</span>
+<span class="p">:</span><span class="nf">area</span><span class="p">(</span><span class="s2">&quot; = &quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;=@x&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot; = &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>self for function chaining</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><a class="reference internal" href="#tm.ruleset" title="tm.ruleset"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">ruleset</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.ruleset.rotate">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">shouldRotate</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.ruleset.rotate" title="Link to this definition">¶</a></dt>
+<dd><p>Rotates the rule’s tile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shouldRotate</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">boolean</span></code></span>) – Whether the sprite should be rotated</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>self for function chaining</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.ruleset" title="tm.ruleset"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">ruleset</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.ruleset.flip">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">flip</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">flipX</span></em>, <em class="sig-param"><span class="pre">flipY</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.ruleset.flip" title="Link to this definition">¶</a></dt>
+<dd><p>Flips the rule’s tile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flipX</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">boolean</span></code></span>) – flip sprite horizontally</p></li>
+<li><p><strong>flipY</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">boolean</span></code></span>) – flip sprite vertically</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>self for function chaining</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.ruleset" title="tm.ruleset"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">ruleset</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.ruleset.collision">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">collision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mode</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.ruleset.collision" title="Link to this definition">¶</a></dt>
+<dd><p>Set the collision mode of the rule’s tile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mode</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">enum</span></code></span>) – The enum of the collision</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>self for function chaining</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.tile" title="tm.tile"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">tile</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.ruleset.delete">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.ruleset.delete" title="Link to this definition">¶</a></dt>
+<dd><p>Deletes the currently selected rule from the ruleset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>self for function chaining</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><a class="reference internal" href="#tm.tile" title="tm.tile"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">tile</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.ruleset.clear">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.ruleset.clear" title="Link to this definition">¶</a></dt>
+<dd><p>Clears all rules from the ruleset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>self for function chaining</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><a class="reference internal" href="#tm.tile" title="tm.tile"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">tile</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="tm.tm.ruleset.count">
+<span class="sig-name descname"><span class="pre">count</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#tm.tm.ruleset.count" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the number of rules in ruleset</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="tileset">
+<h2>Tileset<a class="headerlink" href="#tileset" title="Link to this heading">¶</a></h2>
+<dl class="lua class">
+<dt class="sig sig-object lua" id="tm.tileset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tm.</span></span><span class="sig-name descname"><span class="pre">tileset</span></span><a class="headerlink" href="#tm.tileset" title="Link to this definition">¶</a></dt>
+<dd><div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">How to created tileset</span><a class="headerlink" href="#id4" title="Link to this code">¶</a></div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nv">myTileset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">tm</span><span class="p">.</span><span class="nf">tileset</span><span class="p">()</span>
+
+<span class="nv">newTile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">myTileset</span><span class="p">:</span><span class="nf">tile</span><span class="p">(</span><span class="s2">&quot;dirt&quot;</span><span class="p">)</span>
+<span class="nv">newTile2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">myTileset</span><span class="p">[</span><span class="s2">&quot;dirt&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1">-- get the tile from the tileset by name</span>
+<span class="nv">newTile3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">myTileset</span><span class="p">[</span><span class="nv">newTile</span><span class="p">.</span><span class="py">id</span><span class="p">]</span><span class="w"> </span><span class="c1">-- get the tile from the tileset by its id</span>
+</pre></div>
+</div>
+</div>
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.tileset.tile">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">tileName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.tileset.tile" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a tile in the tileset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tileName</strong> (<span><a class="reference internal" href="string.html#module-string" title="string"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">string</span></code></a></span>) – Name of the tile in the tileset</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The newly created tile</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.tile" title="tm.tile"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">tile</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua">
+<span class="sig-name descname"><span class="pre">[index]</span> <span class="pre">(tileId)</span></span></dt>
+<dd><p>Select tile from tileset using its id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tileId</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">integer</span></code></span>) – The id of the tile.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected tile</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.tile" title="tm.tile"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">tile</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua">
+<span class="sig-name descname"><span class="pre">[index]</span> <span class="pre">(tileName)</span></span></dt>
+<dd><p>Select tile from tileset using its name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tileName</strong> (<span><a class="reference internal" href="string.html#module-string" title="string"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">string</span></code></a></span>) – The name of the tile.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected tile</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.tile" title="tm.tile"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">tile</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.tileset.clear">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.tileset.clear" title="Link to this definition">¶</a></dt>
+<dd><p>Clears all tiles from the tileset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>self for function chaining</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><a class="reference internal" href="#tm.tile" title="tm.tile"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">tile</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="tm.tm.tileset.count">
+<span class="sig-name descname"><span class="pre">count</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#tm.tm.tileset.count" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the number of rules in ruleset</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="id1">
+<h2>Tilemap<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<dl class="lua class">
+<dt class="sig sig-object lua" id="tm.tilemap">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tm.</span></span><span class="sig-name descname"><span class="pre">tilemap</span></span><a class="headerlink" href="#tm.tilemap" title="Link to this definition">¶</a></dt>
+<dd><div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">How to create a tilemap</span><a class="headerlink" href="#id5" title="Link to this code">¶</a></div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nv">myTileset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">tm</span><span class="p">.</span><span class="nf">tileset</span><span class="p">()</span>
+
+<span class="nv">myTilemap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">tm</span><span class="p">.</span><span class="nf">tilemap</span><span class="p">(</span><span class="nv">myTileset</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.tilemap.layer">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">layerName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.tilemap.layer" title="Link to this definition">¶</a></dt>
+<dd><p>Creates layer in the tilemap</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>layerName</strong> (<span><a class="reference internal" href="string.html#module-string" title="string"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">string</span></code></a></span>) – Name of the layer in this tilemap</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The newly created layer</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.layer" title="tm.layer"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">layer</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua">
+<span class="sig-name descname"><span class="pre">[index]</span> <span class="pre">(layerName)</span></span></dt>
+<dd><p>Select layer from tilemap using its name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>layerName</strong> (<span><a class="reference internal" href="string.html#module-string" title="string"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">string</span></code></a></span>) – The name of the layer</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected layer</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#tm.layer" title="tm.layer"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">layer</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.tilemap.draw">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.tilemap.draw" title="Link to this definition">¶</a></dt>
+<dd><p>Draw all the layers of the tilemap</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="tm.tm.tilemap.world2d">
+<span class="sig-name descname"><span class="pre">world2d</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">world2d</span><a class="headerlink" href="#tm.tm.tilemap.world2d" title="Link to this definition">¶</a></dt>
+<dd><p>Gets/sets the physics world.</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="tm.tm.tilemap.tileset">
+<span class="sig-name descname"><span class="pre">tileset</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">tileset</span><a class="headerlink" href="#tm.tm.tilemap.tileset" title="Link to this definition">¶</a></dt>
+<dd><p>Gets/sets the tileset.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="layer">
+<h2>Layer<a class="headerlink" href="#layer" title="Link to this heading">¶</a></h2>
+<dl class="lua class">
+<dt class="sig sig-object lua" id="tm.layer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tm.</span></span><span class="sig-name descname"><span class="pre">layer</span></span><a class="headerlink" href="#tm.layer" title="Link to this definition">¶</a></dt>
+<dd><div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">How to create a layer</span><a class="headerlink" href="#id6" title="Link to this code">¶</a></div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nv">myTileset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">tm</span><span class="p">.</span><span class="nf">tileset</span><span class="p">()</span>
+
+<span class="nv">myTilemap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">tm</span><span class="p">.</span><span class="nf">tilemap</span><span class="p">(</span><span class="nv">myTileset</span><span class="p">)</span>
+
+<span class="nv">layer1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">myTilemap</span><span class="p">:</span><span class="nf">layer</span><span class="p">(</span><span class="s2">&quot;layer1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="tm.tm.layer.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#tm.tm.layer.id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">name</span></dt>
+<dd></dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="tm.tm.layer.offset">
+<span class="sig-name descname"><span class="pre">offset</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">vec3</span><a class="headerlink" href="#tm.tm.layer.offset" title="Link to this definition">¶</a></dt>
+<dd><p>Adjust the position of tilemap drawing</p>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.origin">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">origin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.origin" title="Link to this definition">¶</a></dt>
+<dd><p>Position of bottom left tile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The x, y, and z of the origin</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number,</span> <span class="pre">number,</span> <span class="pre">number</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.size">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.size" title="Link to this definition">¶</a></dt>
+<dd><p>Size of the tilemap from min position to max position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The x, y, and z of the size</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number,</span> <span class="pre">number,</span> <span class="pre">number</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.clear">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.clear" title="Link to this definition">¶</a></dt>
+<dd><p>Clears all tiles from the layer</p>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.get">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xPos</span></em>, <em class="sig-param"><span class="pre">yPos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.get" title="Link to this definition">¶</a></dt>
+<dd><p>Get the tileID at this position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span> <span class="pre">(integer)</span></code></span>) – The x position of the tile</p></li>
+<li><p><strong>yPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span> <span class="pre">(integer)</span></code></span>) – The y position of the tile</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The tileId at that position along with it’s tileset</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number,</span> <span class="pre">tileset</span></code></span></p>
+</dd>
+</dl>
+<p><cite>If tile position does not exist then returns</cite> <code class="docutils literal notranslate"><span class="pre">tile.invalidID</span></code></p>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.set">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xPos</span></em>, <em class="sig-param"><span class="pre">yPos</span></em>, <em class="sig-param"><span class="pre">tileID|theTile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.set" title="Link to this definition">¶</a></dt>
+<dd><p>set the tile at this position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span> <span class="pre">(integer)</span></code></span>) – The x position of the tile</p></li>
+<li><p><strong>yPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span> <span class="pre">(integer)</span></code></span>) – The y position of the tile</p></li>
+<li><p><strong>tileID|theTile</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span> <span class="pre">|</span> <span class="pre">tile</span></code></span>) – Can take in a tileID or the tile itself</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.draw">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.draw" title="Link to this definition">¶</a></dt>
+<dd><p>Draw this layer</p>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.fill">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xPos</span></em>, <em class="sig-param"><span class="pre">yPos</span></em>, <em class="sig-param"><span class="pre">tileID|theTile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.fill" title="Link to this definition">¶</a></dt>
+<dd><p>Fills the tilemap with this tile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tileID|theTile</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span> <span class="pre">|</span> <span class="pre">tile</span></code></span>) – Can take in a tileID or the tile itself</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.resize">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xSize</span></em>, <em class="sig-param"><span class="pre">ySize</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.resize" title="Link to this definition">¶</a></dt>
+<dd><p>Resizes the layer to a new size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xSize</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The new width of the layer</p></li>
+<li><p><strong>ySize</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The new height of the layer</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.visit">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.visit" title="Link to this definition">¶</a></dt>
+<dd><p>Goes through all the position of the the layers and calls this function. The callback function’s input takes x, y, z, and tileID (the tile at that position)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>callback</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">function(number,</span> <span class="pre">number,</span> <span class="pre">number,</span> <span class="pre">number,</span> <span class="pre">tileset)</span></code></span>) – The function that will be call each position: function(x, y, z, tileID, tileset)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.worldToTile">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">worldToTile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xPos</span></em>, <em class="sig-param"><span class="pre">yPos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.worldToTile" title="Link to this definition">¶</a></dt>
+<dd><p>Get the tile position from the world’s position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span> <span class="pre">(integer)</span></code></span>) – The x position of the world</p></li>
+<li><p><strong>yPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span> <span class="pre">(integer)</span></code></span>) – The y position of the world</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>returns the tile position from world space</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number,</span> <span class="pre">number</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.tileToWorld">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">tileToWorld</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xPos</span></em>, <em class="sig-param"><span class="pre">yPos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.tileToWorld" title="Link to this definition">¶</a></dt>
+<dd><p>Get the world position from the tiles’s position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span> <span class="pre">(integer)</span></code></span>) – The x position of the tile in layer</p></li>
+<li><p><strong>yPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span> <span class="pre">(integer)</span></code></span>) – The y position of the tile in layer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>returns the world position from tile space</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number,</span> <span class="pre">number</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tm.layer.bounds">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">bounds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tm.layer.bounds" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>returns bounds of the layer</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><a class="reference internal" href="math_types.html#bounds.aabb" title="bounds.aabb"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">bounds.aabb</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="animation.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">animation</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="physics3d.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">physics3d</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021, John Millard
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">tilemap</a><ul>
+<li><a class="reference internal" href="#tile">Tile</a></li>
+<li><a class="reference internal" href="#ruleset">Ruleset</a></li>
+<li><a class="reference internal" href="#tileset">Tileset</a></li>
+<li><a class="reference internal" href="#id1">Tilemap</a></li>
+<li><a class="reference internal" href="#layer">Layer</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=9f5556dd"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>

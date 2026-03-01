@@ -196,6 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tween.html">tween</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui.html">ui</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
@@ -207,6 +208,8 @@
 <li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics2d.html">physics2d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics3d.html">physics3d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tilemap.html">tilemap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation.html">animation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pick.html">pick</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer.html">viewer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device.html">device</a></li>
@@ -737,14 +740,170 @@
 </dl>
 </dd></dl>
 
+<dl class="lua function">
+<dt class="sig sig-object lua" id="textGlyphBounds">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">textGlyphBounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">str</span></em>, <em class="sig-param"><span class="pre">pos</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">size</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#textGlyphBounds" title="Link to this definition">¶</a></dt>
+<dd><p>(Experimental subject to change) Gets the bound each characters in a text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong> (<span><a class="reference internal" href="string.html#module-string" title="string"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">string</span></code></a></span>) – The text to query</p></li>
+<li><p><strong>pos</strong> – The position of the textbox</p></li>
+<li><p><strong>size</strong> – The size of the textbox</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> of the text</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>glyphBounds</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> - x pos of glyph</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> - y pos of glyph</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code> - width of glyph</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code> - height of glyph</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="module-gizmos">
 <span id="gizmos"></span><h2>Gizmos<a class="headerlink" href="#module-gizmos" title="Link to this heading">¶</a></h2>
 <p>Gizmos are useful for drawing shapes in 2D/3D space for debugging and editing</p>
 <dl class="lua function">
 <dt class="sig sig-object lua" id="gizmos.line">
-<em class="property"> </em><span class="sig-prename descclassname"><span class="pre">gizmos.</span></span><span class="sig-name descname"><span class="pre">line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x1</span></em>, <em class="sig-param"><span class="pre">y1</span></em>, <em class="sig-param"><span class="pre">z1</span></em>, <em class="sig-param"><span class="pre">x2</span></em>, <em class="sig-param"><span class="pre">y2</span></em>, <em class="sig-param"><span class="pre">z2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gizmos.line" title="Link to this definition">¶</a></dt>
+<em class="property"> </em><span class="sig-prename descclassname"><span class="pre">gizmos.</span></span><span class="sig-name descname"><span class="pre">line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">point1</span></em>, <em class="sig-param"><span class="pre">point2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gizmos.line" title="Link to this definition">¶</a></dt>
 <dd><p>Draws a 3D antialiased line</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point1</strong> (<span><a class="reference internal" href="math_types.html#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – First point of line</p></li>
+<li><p><strong>point2</strong> (<span><a class="reference internal" href="math_types.html#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – Second point of line</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="gizmos.box">
+<em class="property"> </em><span class="sig-prename descclassname"><span class="pre">gizmos.</span></span><span class="sig-name descname"><span class="pre">box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pos</span></em>, <em class="sig-param"><span class="pre">size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gizmos.box" title="Link to this definition">¶</a></dt>
+<dd><p>Draws a 3D antialiased cube</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> (<span><a class="reference internal" href="math_types.html#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – Position of the box</p></li>
+<li><p><strong>size</strong> (<span><a class="reference internal" href="math_types.html#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – Size of the box</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="gizmos.sphere">
+<em class="property"> </em><span class="sig-prename descclassname"><span class="pre">gizmos.</span></span><span class="sig-name descname"><span class="pre">sphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pos</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">radius</span> <span class="pre">=</span> <span class="pre">1</span></em>, <em class="sig-param"><span class="pre">segments</span> <span class="pre">=</span> <span class="pre">32</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gizmos.sphere" title="Link to this definition">¶</a></dt>
+<dd><p>Draws a 3D antialiased sphere</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> (<span><a class="reference internal" href="math_types.html#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – Position of the sphere</p></li>
+<li><p><strong>radius</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Radius of the sphere</p></li>
+<li><p><strong>segments</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Number of subdivisions that make up the sphere</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="gizmos.circlePlane">
+<em class="property"> </em><span class="sig-prename descclassname"><span class="pre">gizmos.</span></span><span class="sig-name descname"><span class="pre">circlePlane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pos</span></em>, <em class="sig-param"><span class="pre">normal</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">radius</span> <span class="pre">=</span> <span class="pre">1</span></em>, <em class="sig-param"><span class="pre">segments</span> <span class="pre">=</span> <span class="pre">32</span></em>, <em class="sig-param"><span class="pre">startAngle</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">endAngle</span> <span class="pre">=</span> <span class="pre">360</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gizmos.circlePlane" title="Link to this definition">¶</a></dt>
+<dd><p>Draws a 3D antialiased circle plane</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> (<span><a class="reference internal" href="math_types.html#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – Position of the circle</p></li>
+<li><p><strong>normal</strong> (<span><a class="reference internal" href="math_types.html#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – Normal direction of the circle</p></li>
+<li><p><strong>radius</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Radius of the circle</p></li>
+<li><p><strong>segments</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Number of subdivisions that make up the circle</p></li>
+<li><p><strong>startAngle</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Start degree of the circle</p></li>
+<li><p><strong>endAngle</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – End degree of the circle</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="gizmos.cylinder">
+<em class="property"> </em><span class="sig-prename descclassname"><span class="pre">gizmos.</span></span><span class="sig-name descname"><span class="pre">cylinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pos</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">radius</span> <span class="pre">=</span> <span class="pre">1</span></em>, <em class="sig-param"><span class="pre">height</span> <span class="pre">=</span> <span class="pre">1</span></em>, <em class="sig-param"><span class="pre">segments</span> <span class="pre">=</span> <span class="pre">32</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gizmos.cylinder" title="Link to this definition">¶</a></dt>
+<dd><p>Draws a 3D antialiased cylinder</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> (<span><a class="reference internal" href="math_types.html#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – Position of the cylinder</p></li>
+<li><p><strong>radius</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Radius of the cylinder</p></li>
+<li><p><strong>height</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Height of the cylinder</p></li>
+<li><p><strong>segments</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Number of subdivisions that make up the cylinder</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="gizmos.capsule">
+<em class="property"> </em><span class="sig-prename descclassname"><span class="pre">gizmos.</span></span><span class="sig-name descname"><span class="pre">capsule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pos</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">radius</span> <span class="pre">=</span> <span class="pre">1</span></em>, <em class="sig-param"><span class="pre">height</span> <span class="pre">=</span> <span class="pre">1</span></em>, <em class="sig-param"><span class="pre">segments</span> <span class="pre">=</span> <span class="pre">32</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gizmos.capsule" title="Link to this definition">¶</a></dt>
+<dd><p>Draws a 3D antialiased capsule</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> (<span><a class="reference internal" href="math_types.html#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – Position of the capsule</p></li>
+<li><p><strong>radius</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Radius of the capsule</p></li>
+<li><p><strong>height</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Height of the capsule</p></li>
+<li><p><strong>segments</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – Number of subdivisions that make up the capsule</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="gizmos.polyline">
+<em class="property"> </em><span class="sig-prename descclassname"><span class="pre">gizmos.</span></span><span class="sig-name descname"><span class="pre">polyline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">points</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">closeShape</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gizmos.polyline" title="Link to this definition">¶</a></dt>
+<dd><p>Draws a 3D antialiased polyline</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<span><a class="reference internal" href="lua.html#table" title="table"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">table</span></code></a></span>) – Table of points (vec3) the represent the poly line</p></li>
+<li><p><strong>radius</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">boolean</span></code></span>) – Should the line be closed (polygon)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="gizmos.mesh">
+<em class="property"> </em><span class="sig-prename descclassname"><span class="pre">gizmos.</span></span><span class="sig-name descname"><span class="pre">mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mesh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gizmos.mesh" title="Link to this definition">¶</a></dt>
+<dd><p>Draws a 3D antialiased mesh</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mesh</strong> (<span><a class="reference internal" href="#gizmos.mesh" title="gizmos.mesh"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">mesh</span></code></a></span>) – The mesh object to draw</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="gizmos.icon">
+<em class="property"> </em><span class="sig-prename descclassname"><span class="pre">gizmos.</span></span><span class="sig-name descname"><span class="pre">icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">camera</span></em>, <em class="sig-param"><span class="pre">iconSprite</span></em>, <em class="sig-param"><span class="pre">pos</span></em>, <em class="sig-param"><span class="pre">size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gizmos.icon" title="Link to this definition">¶</a></dt>
+<dd><p>Draws a image in 3D shape facing the camera</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>camera</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">camera</span></code></span>) – The camera object</p></li>
+<li><p><strong>iconSprite</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">image</span></code></span>) – The image to be drawn</p></li>
+<li><p><strong>pos</strong> (<span><a class="reference internal" href="math_types.html#vec3" title="vec3"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">vec3</span></code></a></span>) – The position of the image in 3D space</p></li>
+<li><p><strong>size</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The size of the image in 3D space</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </section>

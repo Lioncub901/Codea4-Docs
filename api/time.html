@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="objc" href="objc.html" /><link rel="prev" title="Motion Overview" href="motion.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="ui" href="ui.html" /><link rel="prev" title="tween" href="tween.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.01.29 -->
-        <title>require - Codea 4.0 documentation</title>
+        <title>time - Codea 4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -196,13 +196,13 @@
 <li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tween.html">tween</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui.html">ui</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#device-orientation">Device Orientation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#magnetic-field-data">Magnetic Field Data</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">require</a></li>
+<li class="toctree-l1"><a class="reference internal" href="require.html">require</a></li>
 <li class="toctree-l1"><a class="reference internal" href="objc.html">objc</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pasteboard.html">pasteboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
@@ -248,56 +248,76 @@
           </label>
         </div>
         <article role="main">
-          <section id="require">
-<h1>require<a class="headerlink" href="#require" title="Link to this heading">¶</a></h1>
-<p>The require API allows importing Lua files from the specified asset key.</p>
-<section id="codea-project">
-<h2>Codea Project<a class="headerlink" href="#codea-project" title="Link to this heading">¶</a></h2>
-<p>For Codea project asset keys, all Lua files except Main.lua are imported by default, including the global variables and functions.</p>
-<p><cite>require.option.loadMain</cite> can be used to import Main.lua.
-<cite>require.option.noImport</cite> can be used to prevent importing global variables and functions.</p>
-</section>
-<section id="single-lua-file">
-<h2>Single Lua File<a class="headerlink" href="#single-lua-file" title="Link to this heading">¶</a></h2>
-<p>For single Lua file asset keys, only the specified file is imported, including its global variables and functions by default.</p>
-<p><cite>require.option.noImport</cite> can be used to prevent importing global variables and functions.</p>
-</section>
-<section id="id1">
-<h2>require<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
-<dl class="lua function">
-<dt class="sig sig-object lua">
-<em class="property"> </em><span class="sig-name descname"><span class="pre">require</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">assetKey</span></em>, <em class="sig-param"><span class="pre">...</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Import a single file from the specified asset key.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>assetKey</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">assetKey</span></code></span>) – The asset key of the file to import</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Value returned by the imported file, if any</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">any</span></code></span></p>
-</dd>
-</dl>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nb">require</span><span class="p">(</span><span class="nv">asset</span><span class="p">.</span><span class="py">documents</span><span class="p">.</span><span class="py">MyLibrary</span><span class="p">,</span><span class="w"> </span><span class="nb">require</span><span class="p">.</span><span class="nv">option</span><span class="p">.</span><span class="py">noImport</span><span class="p">,</span><span class="w"> </span><span class="nb">require</span><span class="p">.</span><span class="nv">option</span><span class="p">.</span><span class="py">loadMain</span><span class="p">)</span>
-
-<span class="nv">myFeature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="nv">asset</span><span class="p">.</span><span class="py">documents</span><span class="p">.</span><span class="py">MyOtherLibrary</span><span class="p">.</span><span class="py">MyFeature</span><span class="p">,</span><span class="w"> </span><span class="nb">require</span><span class="p">.</span><span class="nv">option</span><span class="p">.</span><span class="py">noImport</span><span class="p">)</span>
-
-<span class="nb">require</span><span class="p">(</span><span class="nv">asset</span><span class="p">.</span><span class="py">documents</span><span class="p">.</span><span class="py">MyOtherLibrary</span><span class="p">.</span><span class="py">MyOtherFeature</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
+          <section id="time">
+<h1>time<a class="headerlink" href="#time" title="Link to this heading">¶</a></h1>
 <dl class="lua class">
 <dt class="sig sig-object lua">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">require</span></span></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">time</span></span></dt>
 <dd><dl class="lua attribute">
-<dt class="sig sig-object lua" id="require.option">
-<span class="sig-name descname"><span class="pre">option</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">None</span><a class="headerlink" href="#require.option" title="Link to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">loadMain</span></code> - When used with a Codea project, load Main.lua</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">noImport</span></code> - Do not import global variables and functions</p></li>
-</ul>
+<dt class="sig sig-object lua" id="time.delta">
+<span class="sig-name descname"><span class="pre">delta</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#time.delta" title="Link to this definition">¶</a></dt>
+<dd><p>The time between the last frame and this frame</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="time.unscaledDelta">
+<span class="sig-name descname"><span class="pre">unscaledDelta</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#time.unscaledDelta" title="Link to this definition">¶</a></dt>
+<dd><p>Time delta without being affected by the time scale</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="time.fixedDelta">
+<span class="sig-name descname"><span class="pre">fixedDelta</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#time.fixedDelta" title="Link to this definition">¶</a></dt>
+<dd><p>Set delta of the program (like setting the fps)</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="time.elapsed">
+<span class="sig-name descname"><span class="pre">elapsed</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#time.elapsed" title="Link to this definition">¶</a></dt>
+<dd><p>The time that has past since the program started</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="time.unscaledElapsed">
+<span class="sig-name descname"><span class="pre">unscaledElapsed</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#time.unscaledElapsed" title="Link to this definition">¶</a></dt>
+<dd><p>The time that has past without being affected by the time scale</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="time.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#time.scale" title="Link to this definition">¶</a></dt>
+<dd><p>Allowing the scaling of time to speed up or slow down (default is 1)</p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading">¶</a></h2>
+<p>For the scene time properties</p>
+<dl class="lua class">
+<dt class="sig sig-object lua" id="time.settings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">time.settings</span></span><a class="headerlink" href="#time.settings" title="Link to this definition">¶</a></dt>
+<dd><dl class="lua attribute">
+<dt class="sig sig-object lua" id="time.settings.autoUpdate">
+<span class="sig-name descname"><span class="pre">autoUpdate</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">boolean</span><a class="headerlink" href="#time.settings.autoUpdate" title="Link to this definition">¶</a></dt>
+<dd><p>Set to false prevents the scene from updating, draw, touching automatically (for manual use)</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="time.settings.maximumTimeStep">
+<span class="sig-name descname"><span class="pre">maximumTimeStep</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#time.settings.maximumTimeStep" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="time.settings.fixedDelta">
+<span class="sig-name descname"><span class="pre">fixedDelta</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#time.settings.fixedDelta" title="Link to this definition">¶</a></dt>
+<dd><p>Set delta of the scene (like setting the fps)</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="time.settings.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#time.settings.scale" title="Link to this definition">¶</a></dt>
+<dd><p>Allowing the scaling of time to speed up or slow down (default is 1)</p>
 </dd></dl>
 
 </dd></dl>
@@ -310,23 +330,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="objc.html">
+          <a class="next-page" href="ui.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">objc</div>
+                <div class="title">ui</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="motion.html">
+          <a class="prev-page" href="tween.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Motion Overview</div>
+                <div class="title">tween</div>
                 
               </div>
             </a>
@@ -360,10 +380,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">require</a><ul>
-<li><a class="reference internal" href="#codea-project">Codea Project</a></li>
-<li><a class="reference internal" href="#single-lua-file">Single Lua File</a></li>
-<li><a class="reference internal" href="#id1">require</a></li>
+<li><a class="reference internal" href="#">time</a><ul>
+<li><a class="reference internal" href="#settings">Settings</a></li>
 </ul>
 </li>
 </ul>

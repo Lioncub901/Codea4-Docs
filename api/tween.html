@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="ui" href="ui.html" /><link rel="prev" title="light" href="light.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="time" href="time.html" /><link rel="prev" title="light" href="light.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.01.29 -->
         <title>tween - Codea 4.0 documentation</title>
@@ -196,6 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">tween</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui.html">ui</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
@@ -207,6 +208,8 @@
 <li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics2d.html">physics2d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics3d.html">physics3d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tilemap.html">tilemap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation.html">animation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pick.html">pick</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer.html">viewer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device.html">device</a></li>
@@ -334,6 +337,28 @@
 </dd></dl>
 
 <dl class="lua method">
+<dt class="sig sig-object lua">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">ease</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">easeFunction</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets a custom easing callback for the current tweening segment (created via <code class="docutils literal notranslate"><span class="pre">to{}</span></code>)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>easeCallback</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">function(t,</span> <span class="pre">from,</span> <span class="pre">to)</span></code></span>) – The easing callback to use</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tween.delay">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tween.delay" title="Link to this definition">¶</a></dt>
+<dd><p>Adds a delay to the tween for a certain time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time</strong> – Time in seconds to delay the tween</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
 <dt class="sig sig-object lua" id="tween.loop">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">count</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tween.loop" title="Link to this definition">¶</a></dt>
 <dd><p>Sets the loop count for the current tweening segment (created via <code class="docutils literal notranslate"><span class="pre">to{}</span></code>). Using <cite>nil</cite> for the count will result in an infinite number of loops</p>
@@ -406,6 +431,17 @@
 <dt class="sig sig-object lua" id="tween.onComplete">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">onComplete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tween.onComplete" title="Link to this definition">¶</a></dt>
 <dd><p>Sets a callback for each time the tween completes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>callback</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">function</span></code></span>) – The callback function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="tween.onSubComplete">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">onSubComplete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tween.onSubComplete" title="Link to this definition">¶</a></dt>
+<dd><p>Sets a callback for each time the tween reach a sub time in the tween</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>callback</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">function</span></code></span>) – The callback function</p>
@@ -532,12 +568,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="ui.html">
+          <a class="next-page" href="time.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">ui</div>
+                <div class="title">time</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

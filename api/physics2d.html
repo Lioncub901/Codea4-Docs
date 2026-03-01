@@ -196,6 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tween.html">tween</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui.html">ui</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
@@ -207,6 +208,8 @@
 <li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">physics2d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics3d.html">physics3d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tilemap.html">tilemap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation.html">animation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pick.html">pick</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer.html">viewer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device.html">device</a></li>
@@ -779,6 +782,40 @@
 <dd><p>The body this collider belongs to</p>
 </dd></dl>
 
+<dl class="lua method">
+<dt class="sig sig-object lua" id="physics2d.collider.collide">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">collide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">otherCollider</span></em><span class="sig-paren">)</span><a class="headerlink" href="#physics2d.collider.collide" title="Link to this definition">¶</a></dt>
+<dd><p>Checks the collision between two colliers: this one and another collider and gives infomation about it</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>otherCollider</strong> (<span><a class="reference internal" href="#physics2d.collider" title="physics2d.collider"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">collider</span></code></a></span>) – The other collider to collide with</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">didCollide[,</span> <span class="pre">point,</span> <span class="pre">normal,</span> <span class="pre">penetration]</span></code> - <cite>didCollide</cite> is whether the collision happened</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">boolean[,</span> <span class="pre">vec2,</span> <span class="pre">vec2,</span> <span class="pre">number]</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="physics2d.collider.overlap">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">otherCollider</span></em><span class="sig-paren">)</span><a class="headerlink" href="#physics2d.collider.overlap" title="Link to this definition">¶</a></dt>
+<dd><p>Checks overlapping between two colliers: this one and another collider</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>otherCollider</strong> (<span><a class="reference internal" href="#physics2d.collider" title="physics2d.collider"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">collider</span></code></a></span>) – The other collider to overlap with</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Checks whether the two colliders are overlapping</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">boolean</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="lua class">
@@ -908,6 +945,18 @@
 <dt class="sig sig-object lua" id="physics2d.physics2d.contact.otherCollider">
 <span class="sig-name descname"><span class="pre">otherCollider</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">physics2d.collider</span><a class="headerlink" href="#physics2d.physics2d.contact.otherCollider" title="Link to this definition">¶</a></dt>
 <dd><p>The second collider involved in this collision contact</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="physics2d.physics2d.contact.entity">
+<span class="sig-name descname"><span class="pre">entity</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">entity</span><a class="headerlink" href="#physics2d.physics2d.contact.entity" title="Link to this definition">¶</a></dt>
+<dd><p>The first entity in this contact (the entity receiving the callback)</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="physics2d.physics2d.contact.otherEntity">
+<span class="sig-name descname"><span class="pre">otherEntity</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">entity</span><a class="headerlink" href="#physics2d.physics2d.contact.otherEntity" title="Link to this definition">¶</a></dt>
+<dd><p>The second entity involved in this collision contact</p>
 </dd></dl>
 
 </dd></dl>
@@ -1233,6 +1282,42 @@
 </dd></dl>
 
 </section>
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading">¶</a></h2>
+<dl class="lua class">
+<dt class="sig sig-object lua" id="physics2d.settings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">physics2d.</span></span><span class="sig-name descname"><span class="pre">settings</span></span><a class="headerlink" href="#physics2d.settings" title="Link to this definition">¶</a></dt>
+<dd><dl class="lua attribute">
+<dt class="sig sig-object lua" id="physics2d.physics2d.settings.debugDraw">
+<span class="sig-name descname"><span class="pre">debugDraw</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">boolean</span><a class="headerlink" href="#physics2d.physics2d.settings.debugDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Draws physics objects in the scene</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="physics2d.physics2d.settings.gravity">
+<span class="sig-name descname"><span class="pre">gravity</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">vec2</span><a class="headerlink" href="#physics2d.physics2d.settings.gravity" title="Link to this definition">¶</a></dt>
+<dd><p>Changes the gravity of the physics world</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="physics2d.physics2d.settings.velocityIterations">
+<span class="sig-name descname"><span class="pre">velocityIterations</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#physics2d.physics2d.settings.velocityIterations" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="physics2d.physics2d.settings.positionIterations">
+<span class="sig-name descname"><span class="pre">positionIterations</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#physics2d.physics2d.settings.positionIterations" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="physics2d.physics2d.settings.paused">
+<span class="sig-name descname"><span class="pre">paused</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">boolean</span><a class="headerlink" href="#physics2d.physics2d.settings.paused" title="Link to this definition">¶</a></dt>
+<dd><p>Whether you want to paused the physics in a scene</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 </section>
 
         </article>
@@ -1294,6 +1379,7 @@
 <li><a class="reference internal" href="#simulation">Simulation</a></li>
 <li><a class="reference internal" href="#collision">Collision</a></li>
 <li><a class="reference internal" href="#constraints">Constraints</a></li>
+<li><a class="reference internal" href="#settings">Settings</a></li>
 </ul>
 </li>
 </ul>
