@@ -318,10 +318,10 @@
 </li>
         <li><a href="api/animation.html#animation.name">animation.name (attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/animation.html#animation.onComplete">animation.onComplete (attribute)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/animation.html#animation.playing">animation.playing (attribute)</a>
 </li>
         <li><a href="api/animation.html#animation.time">animation.time (attribute)</a>
@@ -333,6 +333,10 @@
         <li><a href="api/animation.html#animation.track.duration">animation.track.duration (attribute)</a>
 </li>
         <li><a href="api/animation.html#animation.track.fps">animation.track.fps (attribute)</a>
+</li>
+        <li><a href="api/animation.html#animation.track.openBeginning">animation.track.openBeginning (attribute)</a>
+</li>
+        <li><a href="api/animation.html#animation.track.openEasing">animation.track.openEasing (attribute)</a>
 </li>
         <li><a href="api/animation.html#animation.track.property">animation.track.property (attribute)</a>
 </li>
@@ -669,6 +673,8 @@
 </li>
         </ul></li>
         <li><a href="api/image.html#image.cube">cube() (image static method)</a>, <a href="api/image.html#image.cube">[1]</a>, <a href="api/image.html#image.cube">[2]</a>
+</li>
+        <li><a href="api/animation.html#animation.track.custom">custom() (animation.track method)</a>
 </li>
         <li><a href="api/physics3d.html#physics3d.cylinder">cylinder (class in physics3d)</a>
 </li>
@@ -1082,17 +1088,29 @@
 </li>
         <li><a href="api/image.html#image.generateIrradiance">generateIrradiance() (image method)</a>, <a href="api/image.html#image.generateIrradiance">[1]</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/sound.html#sound.generator">generator() (in module sound)</a>
 </li>
         <li><a href="api/physics3d.html#physics3d.generic">generic (class in physics3d)</a>
 </li>
         <li><a href="api/input.html#gesture">gesture (built-in class)</a>
 </li>
+        <li><a href="api/input.html#gesture.all">gesture.all (attribute)</a>
+</li>
         <li><a href="api/input.html#gesture.delta">gesture.delta (attribute)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/input.html#gesture.direction">gesture.direction (attribute)</a>
+</li>
+        <li><a href="api/input.html#gesture.down">gesture.down (attribute)</a>
+</li>
+        <li><a href="api/input.html#gesture.left">gesture.left (attribute)</a>
+</li>
         <li><a href="api/input.html#gesture.location">gesture.location (attribute)</a>
+</li>
+        <li><a href="api/input.html#gesture.longPress">gesture.longPress (built-in class)</a>
+</li>
+        <li><a href="api/input.html#gesture.longPress.enabled">gesture.longPress.enabled (attribute)</a>
 </li>
         <li><a href="api/input.html#gesture.pan">gesture.pan (built-in class)</a>
 </li>
@@ -1108,6 +1126,8 @@
 </li>
         <li><a href="api/input.html#gesture.pinchVelocity">gesture.pinchVelocity (attribute)</a>
 </li>
+        <li><a href="api/input.html#gesture.right">gesture.right (attribute)</a>
+</li>
         <li><a href="api/input.html#gesture.rotation">gesture.rotation (built-in class)</a>
 </li>
         <li><a href="api/input.html#gesture.rotation.enabled">gesture.rotation.enabled (attribute)</a>
@@ -1118,6 +1138,10 @@
 </li>
         <li><a href="api/input.html#gesture.state">gesture.state (attribute)</a>
 </li>
+        <li><a href="api/input.html#gesture.swipe">gesture.swipe (built-in class)</a>
+</li>
+        <li><a href="api/input.html#gesture.swipe.enabled">gesture.swipe.enabled (attribute)</a>
+</li>
         <li><a href="api/input.html#gesture.tap">gesture.tap (built-in class)</a>
 </li>
         <li><a href="api/input.html#gesture.tap.enabled">gesture.tap.enabled (attribute)</a>
@@ -1125,6 +1149,8 @@
         <li><a href="api/input.html#gesture.touchCount">gesture.touchCount (attribute)</a>
 </li>
         <li><a href="api/input.html#gesture.translation">gesture.translation (attribute)</a>
+</li>
+        <li><a href="api/input.html#gesture.up">gesture.up (attribute)</a>
 </li>
         <li><a href="api/entity.html#entity.get">get() (entity method)</a>
 
@@ -1528,14 +1554,14 @@
 </li>
         <li><a href="api/light.html#light.type">light.type (attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/graphics.html#line">line() (built-in function)</a>, <a href="api/graphics.html#line">[1]</a>
 
         <ul>
           <li><a href="api/graphics.html#gizmos.line">(in module gizmos)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/color.html#color.linear">linear() (color method)</a>
 </li>
         <li><a href="api/style.html#style.lineCap">lineCap() (in module style)</a>
@@ -1557,6 +1583,8 @@
 </li>
         </ul></li>
         <li><a href="api/objc.html#objc.log">log() (in module objc)</a>
+</li>
+        <li><a href="api/input.html#gesture.longPress.gesture.longPress">longPress() (gesture.longPress.gesture static method)</a>
 </li>
         <li><a href="api/math_types.html#mat4.lookAt">lookAt() (mat4 static method)</a>, <a href="api/math_types.html#mat4.lookAt">[1]</a>
 </li>
@@ -1708,8 +1736,6 @@
         </ul></li>
         <li><a href="api/input.html#mouse.active">mouse.active (attribute)</a>
 </li>
-        <li><a href="api/input.html#mouse.changed">mouse.changed (attribute)</a>
-</li>
         <li><a href="api/input.html#mouse.connected">mouse.connected (attribute)</a>
 </li>
         <li><a href="api/input.html#mouse.delta">mouse.delta (attribute)</a>
@@ -1728,13 +1754,7 @@
 </li>
         <li><a href="api/input.html#mouse.middle">mouse.middle (attribute)</a>
 </li>
-        <li><a href="api/input.html#mouse.moved">mouse.moved (attribute)</a>
-</li>
         <li><a href="api/input.html#mouse.pos">mouse.pos (attribute)</a>
-</li>
-        <li><a href="api/input.html#mouse.pressed">mouse.pressed (attribute)</a>
-</li>
-        <li><a href="api/input.html#mouse.released">mouse.released (attribute)</a>
 </li>
         <li><a href="api/input.html#mouse.right">mouse.right (attribute)</a>
 </li>
@@ -1745,6 +1765,14 @@
         <li><a href="api/input.html#mouse.x">mouse.x (attribute)</a>
 </li>
         <li><a href="api/input.html#mouse.y">mouse.y (attribute)</a>
+</li>
+        <li><a href="api/input.html#mouseChanged">mouseChanged()</a>
+</li>
+        <li><a href="api/input.html#mouseMoved">mouseMoved()</a>
+</li>
+        <li><a href="api/input.html#mousePressed">mousePressed()</a>
+</li>
+        <li><a href="api/input.html#mouseReleased">mouseReleased()</a>
 </li>
         <li><a href="api/file.html#file.move">move() (in module file)</a>
 </li>
@@ -2608,8 +2636,6 @@
 </li>
         <li><a href="api/light.html#light.spot">spot() (light static method)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/graphics.html#sprite">sprite() (built-in function)</a>, <a href="api/graphics.html#sprite">[1]</a>
 
         <ul>
@@ -2618,6 +2644,8 @@
           <li><a href="api/tilemap.html#tm.tile.sprite">(tm.tile method)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/motion.html#motion.start">start() (in module motion)</a>
 </li>
         <li><a href="api/style.html#style.stencil">stencil() (in module style)</a>, <a href="api/style.html#style.stencil">[1]</a>
@@ -2805,6 +2833,8 @@
         <li><a href="api/style.html#style.style.TRANSPARENT">style.style.TRANSPARENT (attribute)</a>
 </li>
         <li><a href="api/style.html#style.style.ZERO">style.style.ZERO (attribute)</a>
+</li>
+        <li><a href="api/input.html#gesture.swipe.gesture.swipe">swipe() (gesture.swipe.gesture static method)</a>
 </li>
     </ul></td>
   </tr></table>
