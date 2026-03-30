@@ -1245,7 +1245,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The value that is t% between a and b</p>
+<dd class="field-even"><p>The interpolated value between a and b at ratio t.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span></p>
@@ -1266,7 +1266,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The t (progress) that v is between a and b</p>
+<dd class="field-even"><p>The ratio from a to b at which the interpolated value is v</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span></p>
@@ -1277,7 +1277,7 @@
 <dl class="lua method">
 <dt class="sig sig-object lua" id="math.sign">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#math.sign" title="Link to this definition">¶</a></dt>
-<dd><p>if value &lt; 0 then -1, if value == 0 then 0, if value &gt; 0 then 1</p>
+<dd><p>Returns -1 if value &lt; 0, 0 if value == 0, 1 if value &gt; 0.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>value</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The value to take the sign of</p>
@@ -1294,7 +1294,7 @@
 <dl class="lua method">
 <dt class="sig sig-object lua" id="math.clamp">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">clamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">a</span></em>, <em class="sig-param"><span class="pre">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#math.clamp" title="Link to this definition">¶</a></dt>
-<dd><p>Give the clamp value between a and b, value less than <cite>a</cite> the function outputs <cite>a</cite> and value greater than <cite>b</cite> the function outputs <cite>b</cite></p>
+<dd><p>Clamp the value between <cite>a</cite> and <cite>b</cite>. If the value is less than <cite>a</cite>, the function outputs <cite>a</cite>. If the value is greater than <cite>b</cite>, the function outputs <cite>b</cite>. Returns value otherwise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1315,7 +1315,7 @@
 <dl class="lua method">
 <dt class="sig sig-object lua" id="math.clamp01">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">clamp01</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#math.clamp01" title="Link to this definition">¶</a></dt>
-<dd><p>Clamp value between 0 and 1</p>
+<dd><p>Clamp the value between 0 and 1.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>value</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The value to clamp</p>

@@ -417,22 +417,22 @@
 <dl class="lua attribute">
 <dt class="sig sig-object lua" id="animation.loopAmount">
 <span class="sig-name descname"><span class="pre">loopAmount</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">integer</span><a class="headerlink" href="#animation.loopAmount" title="Link to this definition">¶</a></dt>
-<dd><p>Sets the amount of times the animation loop. Set to 0 for an infinite loop</p>
+<dd><p>Sets the amount of times the animation loops. Set to 0 for an infinite loop.</p>
 </dd></dl>
 
 <dl class="lua attribute">
 <dt class="sig sig-object lua" id="animation.onComplete">
 <span class="sig-name descname"><span class="pre">onComplete</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">function</span><a class="headerlink" href="#animation.onComplete" title="Link to this definition">¶</a></dt>
-<dd><p>Set the function that is called when animation is completed</p>
+<dd><p>Set a function to call when the animation is complete.</p>
 </dd></dl>
 
 <dl class="lua method">
 <dt class="sig sig-object lua" id="animation.group">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">animation1</span></em>, <em class="sig-param"><span class="pre">...</span></em>, <em class="sig-param"><span class="pre">animationX</span></em><span class="sig-paren">)</span><a class="headerlink" href="#animation.group" title="Link to this definition">¶</a></dt>
-<dd><p>Groups multiple animations into one animaiton so they can be played synchronously using the same time.
+<dd><p>Groups multiple animations into one animations so they can be played synchronously using the same time.
 Each animation gets their own track (<code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">animationClip</span></code>).
-At the front of the track (0 second), an animation clip key frame is place with each animation as a animation clip.</p>
-<p><cite>Note that duration of the grouped animation is the length of the longest animation</cite></p>
+At the front of the track (0 second), an animation clip key frame is placed with each animation as an animation clip.</p>
+<p><cite>Note that the duration of the grouped animation is the length of the longest animation.</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>animation1</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">animation</span></code></span>) – A single animation to be added to the group</p>
@@ -449,9 +449,9 @@ At the front of the track (0 second), an animation clip key frame is place with 
 <dl class="lua method">
 <dt class="sig sig-object lua" id="animation.sequence">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">animation1</span></em>, <em class="sig-param"><span class="pre">...</span></em>, <em class="sig-param"><span class="pre">animationX</span></em><span class="sig-paren">)</span><a class="headerlink" href="#animation.sequence" title="Link to this definition">¶</a></dt>
-<dd><p>Groups multiple animations into a one animaiton so they can be played in a sequence.
-Each animation is place in a singlar track one after another (<code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">animationClip</span></code>).</p>
-<p><cite>Note that duration of the sequenced animation is the sum of all the animations’ duration</cite></p>
+<dd><p>Groups multiple animations into a single animation so they can be played sequentially.
+Each animation is placed in a singlar track one after another (<code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">animationClip</span></code>).</p>
+<p><cite>Note that the duration of the sequenced animation is the sum of all the animations’ duration.</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>animation1</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">animation</span></code></span>) – A single animation to be added to the sequence</p>
@@ -474,12 +474,12 @@ Each animation is place in a singlar track one after another (<code class="docut
 <dt class="sig sig-object lua" id="animation.track">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">animation.track</span></span><a class="headerlink" href="#animation.track" title="Link to this definition">¶</a></dt>
 <dd><div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">How to create a animation.track</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">How to create an animation.track</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span><span class="w"> </span><span class="nv">ball</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nv">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">color</span><span class="p">.</span><span class="py">red</span><span class="p">,</span><span class="w"> </span><span class="nv">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">asset</span><span class="p">.</span><span class="py">ball1</span><span class="w"> </span><span class="p">}</span>
 
 <span class="nv">ballColorAnimation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">animation</span><span class="p">(</span><span class="nv">ball</span><span class="p">)</span>
 
-<span class="c1">-- animate ball color</span>
+<span class="c1">-- Animate the ball&#39;s color</span>
 <span class="nv">colorTrack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ballColorAnimation</span><span class="p">.</span><span class="py">col</span>
 
 <span class="c1">-- Set the key frames of the ball</span>
@@ -489,7 +489,7 @@ Each animation is place in a singlar track one after another (<code class="docut
 <span class="w">    </span><span class="p">:</span><span class="nf">key</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="nv">color</span><span class="p">.</span><span class="py">green</span><span class="p">)</span>
 
 
-<span class="nv">firstKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">colorTrack</span><span class="p">:</span><span class="nf">keyAtIndex</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">-- get the key at the first index</span>
+<span class="nv">firstKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">colorTrack</span><span class="p">:</span><span class="nf">keyAtIndex</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">-- get the first key</span>
 <span class="nv">firstKey</span><span class="p">.</span><span class="py">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">color</span><span class="p">.</span><span class="py">white</span>
 <span class="nv">colorTrack</span><span class="p">:</span><span class="nf">keyAtTime</span><span class="p">(</span><span class="mf">1.0</span><span class="p">).</span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">color</span><span class="p">.</span><span class="py">black</span><span class="w"> </span><span class="c1">-- change the key value at time 1.0 from blue to magenta</span>
 <span class="nv">colorTrack</span><span class="p">[</span><span class="mf">2.0</span><span class="p">].</span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">color</span><span class="p">.</span><span class="py">magenta</span><span class="w"> </span><span class="c1">-- another way to get time</span>
@@ -498,13 +498,13 @@ Each animation is place in a singlar track one after another (<code class="docut
 
 <span class="c1">-- animate ball sprite with frames</span>
 <span class="nv">spriteTrack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ballAnimation</span><span class="p">:</span><span class="nf">property</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- another way to create a track for the &quot;image&quot; property</span>
-<span class="nv">spriteTrack</span><span class="p">:</span><span class="nf">frames</span><span class="p">({</span><span class="nv">asset</span><span class="p">.</span><span class="py">ball1</span><span class="p">,</span><span class="w"> </span><span class="nv">asset</span><span class="p">.</span><span class="py">ball2</span><span class="p">,</span><span class="w"> </span><span class="nv">asset</span><span class="p">.</span><span class="py">ball3</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nv">fps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="c1">-- add frames to track make them loop 4 time at 6 fps</span>
+<span class="nv">spriteTrack</span><span class="p">:</span><span class="nf">frames</span><span class="p">({</span><span class="nv">asset</span><span class="p">.</span><span class="py">ball1</span><span class="p">,</span><span class="w"> </span><span class="nv">asset</span><span class="p">.</span><span class="py">ball2</span><span class="p">,</span><span class="w"> </span><span class="nv">asset</span><span class="p">.</span><span class="py">ball3</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nv">fps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="c1">-- add frames to the track and make it loop 4 times at 6 fps</span>
 
-<span class="nv">groupAnimation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">animaiton</span><span class="p">.</span><span class="nf">bundle</span><span class="p">(</span><span class="nv">ballColorAnimation</span><span class="p">,</span><span class="w"> </span><span class="nv">ballSpriteAnimation</span><span class="p">)</span>
+<span class="nv">groupAnimation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">animation</span><span class="p">.</span><span class="nf">bundle</span><span class="p">(</span><span class="nv">ballColorAnimation</span><span class="p">,</span><span class="w"> </span><span class="nv">ballSpriteAnimation</span><span class="p">)</span>
 <span class="nv">spriteAnimationTrack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">groupAnimation</span><span class="p">.</span><span class="py">tracks</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="c1">-- get the second track</span>
 <span class="nv">secondTrackKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">spriteAnimationTrack</span><span class="p">:</span><span class="nf">keyAtIndex</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="kd">local</span><span class="w"> </span><span class="nv">theDuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">secondTrackKey</span><span class="p">.</span><span class="py">duration</span><span class="w"> </span><span class="c1">-- get first keyframe</span>
-<span class="nv">secondTrackKey</span><span class="p">.</span><span class="py">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">theDuration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="c1">-- make sprite animation loop 2 times</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">theDuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">secondTrackKey</span><span class="p">.</span><span class="py">duration</span><span class="w"> </span><span class="c1">-- get first key frame</span>
+<span class="nv">secondTrackKey</span><span class="p">.</span><span class="py">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">theDuration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="c1">-- make the sprite animation loop 2 times</span>
 
 <span class="nv">groupAnimation</span><span class="p">:</span><span class="nf">play</span><span class="p">()</span>
 
@@ -516,7 +516,7 @@ Each animation is place in a singlar track one after another (<code class="docut
 <dl class="lua attribute">
 <dt class="sig sig-object lua" id="animation.track.type">
 <span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">trackType</span><a class="headerlink" href="#animation.track.type" title="Link to this definition">¶</a></dt>
-<dd><p>What type of track this track is</p>
+<dd><p>Returns this track’s type.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">animation.track.boolean</span></code> - boolean track</p></li>
@@ -528,8 +528,8 @@ Each animation is place in a singlar track one after another (<code class="docut
 <li><p><code class="docutils literal notranslate"><span class="pre">animation.track.quat</span></code> - quat track</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">animation.track.sprite</span></code> - sprite track</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">animation.track.sound</span></code> - sound track</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">animation.track.function</span></code> - function track: calls a function at a the time</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">animation.track.animationClip</span></code> - animationClip track: plays other animations as a key frame</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">animation.track.function</span></code> - function call track</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">animation.track.animationClip</span></code> - animationClip track: plays another animation</p></li>
 </ul>
 </div></blockquote>
 </dd></dl>
@@ -543,7 +543,7 @@ Each animation is place in a singlar track one after another (<code class="docut
 <dl class="lua attribute">
 <dt class="sig sig-object lua" id="animation.track.property">
 <span class="sig-name descname"><span class="pre">property</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">string</span><a class="headerlink" href="#animation.track.property" title="Link to this definition">¶</a></dt>
-<dd><p>The string that direct to the proper target (property name)</p>
+<dd><p>The string that directs to the proper target (property name)</p>
 </dd></dl>
 
 <dl class="lua attribute">
@@ -561,17 +561,17 @@ Each animation is place in a singlar track one after another (<code class="docut
 <dl class="lua attribute">
 <dt class="sig sig-object lua" id="animation.track.timeDelta">
 <span class="sig-name descname"><span class="pre">timeDelta</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#animation.track.timeDelta" title="Link to this definition">¶</a></dt>
-<dd><p>Gap of time between each frame placed.</p>
+<dd><p>Gap of time between each frame played.</p>
 </dd></dl>
 
 <dl class="lua method">
 <dt class="sig sig-object lua" id="animation.track.frames">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">theFrames</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">frameProperties</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#animation.track.frames" title="Link to this definition">¶</a></dt>
-<dd><p>A way to quickly get/set the keyframes for a sprite track (<code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">animation.track.sprite</span></code>). It uses the timeDelta as a way to space out the sprites</p>
+<dd><p>A way to quickly get/set the keyframes for a sprite track (<code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">animation.track.sprite</span></code>). It uses the timeDelta as a way to space out the sprites.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>theFrames</strong> (<span><a class="reference internal" href="graphics.html#sprite" title="sprite"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">table</span></code></a></span>) – a table of frames to represent the frames of an the sprite animation</p></li>
+<li><p><strong>theFrames</strong> (<span><a class="reference internal" href="graphics.html#sprite" title="sprite"><code class="xref lua lua-class docutils literal notranslate"><span class="pre">table</span></code></a></span>) – a table of frames to represent the frames of the sprite animation</p></li>
 <li><p><strong>frameProperties</strong> – a table of properties of how the frames should behave</p></li>
 </ul>
 </dd>
@@ -581,24 +581,24 @@ Each animation is place in a singlar track one after another (<code class="docut
 <dl class="lua method">
 <dt class="sig sig-object lua" id="animation.track.adjustFrames">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">adjustFrames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#animation.track.adjustFrames" title="Link to this definition">¶</a></dt>
-<dd><p>If the timeDelta/fps gets changed this method will adjust all the frames to fit the new timeDelta/fps</p>
+<dd><p>Adjust the frames to fit the new timeDelta/fps.</p>
 </dd></dl>
 
 <dl class="lua attribute">
 <dt class="sig sig-object lua" id="animation.track.count">
 <span class="sig-name descname"><span class="pre">count</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">integer</span><a class="headerlink" href="#animation.track.count" title="Link to this definition">¶</a></dt>
-<dd><p>The amount of keyframes in a track</p>
+<dd><p>The number of key frames in a track.</p>
 </dd></dl>
 
 <dl class="lua method">
 <dt class="sig sig-object lua" id="animation.track.key">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">time</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">properties</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#animation.track.key" title="Link to this definition">¶</a></dt>
-<dd><p>This is the function to add a keyframe to the track. (Does Chaining)</p>
+<dd><p>Add a key frame to the track. (supports chaining)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number</span></code></span>) – The time of the key frame</p></li>
-<li><p><strong>value</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">any</span> <span class="pre">type</span></code></span>) – The value of the key frame. If <code class="docutils literal notranslate"><span class="pre">trackType</span> <span class="pre">=</span> <span class="pre">animation.track.vec2</span></code> then value should be a <code class="docutils literal notranslate"><span class="pre">vec2</span></code>. Every type follow this rule. If there is no value then set to current value of <code class="docutils literal notranslate"><span class="pre">target[property]</span></code></p></li>
+<li><p><strong>value</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">any</span> <span class="pre">type</span></code></span>) – The value of the key frame. If <code class="docutils literal notranslate"><span class="pre">trackType</span> <span class="pre">=</span> <span class="pre">animation.track.vec2</span></code> then value should be a <code class="docutils literal notranslate"><span class="pre">vec2</span></code>. Every type follows this rule. If there is no value then set to current value of <code class="docutils literal notranslate"><span class="pre">target[property]</span></code></p></li>
 <li><p><strong>properties</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">table</span> <span class="pre">or</span> <span class="pre">easing</span> <span class="pre">enum</span></code></span>) – Quick way to add properties of key</p></li>
 </ul>
 </dd>
@@ -668,7 +668,7 @@ Each animation is place in a singlar track one after another (<code class="docut
 <dl class="lua method">
 <dt class="sig sig-object lua" id="animation.track.custom">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">custom</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">function</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#animation.track.custom" title="Link to this definition">¶</a></dt>
-<dd><p>This allows this track to use a custom function instead the property to set the target</p>
+<dd><p>This allows this track to use a custom function instead of a property to set the target</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>function</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">function</span></code></span>) – Sets the custom function if no input then use default behavior</p>
@@ -692,8 +692,8 @@ Each animation is place in a singlar track one after another (<code class="docut
 <dl class="lua attribute">
 <dt class="sig sig-object lua" id="animation.track.openBeginning">
 <span class="sig-name descname"><span class="pre">openBeginning</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">boolean</span><a class="headerlink" href="#animation.track.openBeginning" title="Link to this definition">¶</a></dt>
-<dd><p>This is a variable that sets the 0 second key frame to be open meaning that the track will add a key frame at 0 second time and will set the value to the current property value.
-This can be used to smoothly go from game play to a cut scene without an abrupt cut.</p>
+<dd><p>This is a variable that sets the 0 second key frame to be open. When true, the track will add a key frame at 0 second time and set the value to the current property value.
+This can be used to smoothly go from gameplay to a cut scene without an abrupt cut.</p>
 </dd></dl>
 
 <dl class="lua attribute">
@@ -744,7 +744,7 @@ This can be used to smoothly go from game play to a cut scene without an abrupt 
 <dl class="lua method">
 <dt class="sig sig-object lua" id="animation.key.restoreDuration">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">restoreDuration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#animation.key.restoreDuration" title="Link to this definition">¶</a></dt>
-<dd><p>Resets the duration of this key frame (sound or animation clip) to it original duration</p>
+<dd><p>Resets the duration of this key frame (sound or animation clip) to its original duration</p>
 </dd></dl>
 
 <dl class="lua method">
@@ -788,7 +788,7 @@ This can be used to smoothly go from game play to a cut scene without an abrupt 
 <dl class="lua attribute">
 <dt class="sig sig-object lua" id="animation.easing.loopAmount">
 <span class="sig-name descname"><span class="pre">loopAmount</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">integer</span><a class="headerlink" href="#animation.easing.loopAmount" title="Link to this definition">¶</a></dt>
-<dd><p>Changes amount of previous frames that are looped</p>
+<dd><p>Changes the amount of previous frames to loop</p>
 </dd></dl>
 
 </dd></dl>
