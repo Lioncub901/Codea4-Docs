@@ -321,10 +321,10 @@
 </li>
         <li><a href="api/animation.html#animation.onComplete">animation.onComplete (attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/animation.html#animation.playing">animation.playing (attribute)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/animation.html#animation.time">animation.time (attribute)</a>
 </li>
         <li><a href="api/animation.html#animation.track">animation.track (built-in class)</a>
@@ -356,7 +356,11 @@
 </li>
         </ul></li>
         <li><a href="api/camera.html#camera.apply">apply() (camera method)</a>
+
+        <ul>
+          <li><a href="api/image.html#image.apply">(image method)</a>
 </li>
+        </ul></li>
         <li><a href="api/physics2d.html#physics2d.body.applyAngularImpulse">applyAngularImpulse() (physics2d.body method)</a>
 
         <ul>
@@ -1000,7 +1004,7 @@
         <li><a href="api/image.html#image.slice.flip">flip() (image.slice method)</a>, <a href="api/image.html#image.slice.flip">[1]</a>
 
         <ul>
-          <li><a href="api/tilemap.html#tm.ruleset.flip">(tm.ruleset method)</a>
+          <li><a href="api/tilemap.html#tm.ruleset.flip">(tm.ruleset method)</a>, <a href="api/tilemap.html#tm.ruleset.flip">[1]</a>
 </li>
         </ul></li>
     </ul></td>
@@ -1013,7 +1017,7 @@
 </li>
         <li><a href="api/scene.html#scene.forEach">forEach() (scene method)</a>
 </li>
-        <li><a href="api/animation.html#animation.track.frames">frames() (animation.track method)</a>
+        <li><a href="api/animation.html#animation.track.frames">frames() (animation.track method)</a>, <a href="api/animation.html#animation.track.frames">[1]</a>
 </li>
         <li><a href="api/physics2d.html#physics2d.friction">friction (class in physics2d)</a>
 </li>
@@ -1099,10 +1103,10 @@
 </li>
         <li><a href="api/input.html#gesture.delta">gesture.delta (attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/input.html#gesture.direction">gesture.direction (attribute)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/input.html#gesture.down">gesture.down (attribute)</a>
 </li>
         <li><a href="api/input.html#gesture.left">gesture.left (attribute)</a>
@@ -1161,9 +1165,13 @@
           <li><a href="api/tilemap.html#tm.layer.get">(tm.layer method)</a>
 </li>
         </ul></li>
+        <li><a href="api/image.html#image.getPixel">getPixel() (image method)</a>
+</li>
         <li><a href="api/physics2d.html#physics2d.joint.getReactionForce">getReactionForce() (physics2d.joint method)</a>
 </li>
         <li><a href="api/physics2d.html#physics2d.joint.getReactionTorque">getReactionTorque() (physics2d.joint method)</a>
+</li>
+        <li><a href="api/image.html#image.getValue">getValue() (image method)</a>
 </li>
         <li><a href="api/graphics.html#module-gizmos">gizmos (module)</a>
 </li>
@@ -1767,13 +1775,13 @@
 </li>
         <li><a href="api/input.html#mouse.y">mouse.y (attribute)</a>
 </li>
-        <li><a href="api/input.html#mouseChanged">mouseChanged()</a>
+        <li><a href="api/input.html#mouseChanged">mouseChanged() (built-in function)</a>
 </li>
-        <li><a href="api/input.html#mouseMoved">mouseMoved()</a>
+        <li><a href="api/input.html#mouseMoved">mouseMoved() (built-in function)</a>
 </li>
-        <li><a href="api/input.html#mousePressed">mousePressed()</a>
+        <li><a href="api/input.html#mousePressed">mousePressed() (built-in function)</a>
 </li>
-        <li><a href="api/input.html#mouseReleased">mouseReleased()</a>
+        <li><a href="api/input.html#mouseReleased">mouseReleased() (built-in function)</a>
 </li>
         <li><a href="api/file.html#file.move">move() (in module file)</a>
 </li>
@@ -2321,6 +2329,8 @@
           <li><a href="api/shader.html#shader.read">(shader static method)</a>
 </li>
         </ul></li>
+        <li><a href="api/image.html#image.readback">readback() (image method)</a>
+</li>
         <li><a href="api/graphics.html#rect">rect() (built-in function)</a>
 
         <ul>
@@ -2357,10 +2367,10 @@
         </ul></li>
         <li><a href="api/animation.html#animation.removeTrack">removeTrack() (animation method)</a>
 </li>
-        <li><a href="api/file.html#file.rename">rename() (in module file)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/file.html#file.rename">rename() (in module file)</a>
+</li>
         <li><a href="api/require.html#require">require (built-in class)</a>
 </li>
         <li><a href="api/require.html#require">require() (built-in function)</a>
@@ -2393,8 +2403,6 @@
           <li><a href="api/tween.html#tween.restart">(tween method)</a>
 </li>
         </ul></li>
-        <li><a href="api/animation.html#animation.key.restoreDuration">restoreDuration() (animation.key method)</a>
-</li>
         <li><a href="api/physics2d.html#physics2d.rope">rope (class in physics2d)</a>
 </li>
         <li><a href="api/image.html#image.slice.rotate">rotate() (image.slice method)</a>, <a href="api/image.html#image.slice.rotate">[1]</a>
@@ -2404,7 +2412,7 @@
 </li>
           <li><a href="api/math_types.html#mat4.rotate">(mat4 static method)</a>, <a href="api/math_types.html#mat4.rotate">[1]</a>
 </li>
-          <li><a href="api/tilemap.html#tm.ruleset.rotate">(tm.ruleset method)</a>
+          <li><a href="api/tilemap.html#tm.ruleset.rotate">(tm.ruleset method)</a>, <a href="api/tilemap.html#tm.ruleset.rotate">[1]</a>
 </li>
           <li><a href="api/math_types.html#vec2.rotate">(vec2 method)</a>
 </li>
@@ -2427,7 +2435,7 @@
 </li>
         <li><a href="api/tilemap.html#tm.ruleset">ruleset (class in tm)</a>
 </li>
-        <li><a href="api/tilemap.html#tm.tile.ruleset">ruleset() (tm.tile method)</a>
+        <li><a href="api/tilemap.html#tm.tile.ruleset">ruleset() (tm.tile method)</a>, <a href="api/tilemap.html#tm.tile.ruleset">[1]</a>
 </li>
     </ul></td>
   </tr></table>
@@ -2513,7 +2521,11 @@
           <li><a href="api/tilemap.html#tm.layer.set">(tm.layer method)</a>
 </li>
         </ul></li>
+        <li><a href="api/image.html#image.setForEach">setForEach() (image method)</a>
+</li>
         <li><a href="api/shader.html#shader.setOption">setOption() (shader method)</a>
+</li>
+        <li><a href="api/image.html#image.setPixel">setPixel() (image method)</a>
 </li>
         <li><a href="api/mesh.html#mesh.setRect">setRect() (mesh method)</a>
 </li>
@@ -2527,6 +2539,8 @@
           <li><a href="api/physics3d.html#physics3d.settings">(class in physics3d)</a>
 </li>
         </ul></li>
+        <li><a href="api/image.html#image.setValue">setValue() (image method)</a>
+</li>
         <li><a href="api/image.html#atlas.setWithCellCount">setWithCellCount() (atlas method)</a>
 </li>
         <li><a href="api/image.html#atlas.setWithCellSize">setWithCellSize() (atlas method)</a>
@@ -2635,18 +2649,18 @@
         </ul></li>
         <li><a href="api/physics3d.html#physics3d.world.sphereCast">sphereCast() (physics3d.world method)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/light.html#light.spot">spot() (light static method)</a>
 </li>
         <li><a href="api/graphics.html#sprite">sprite() (built-in function)</a>, <a href="api/graphics.html#sprite">[1]</a>
 
         <ul>
-          <li><a href="api/tilemap.html#tm.ruleset.sprite">(tm.ruleset method)</a>
+          <li><a href="api/tilemap.html#tm.ruleset.sprite">(tm.ruleset method)</a>, <a href="api/tilemap.html#tm.ruleset.sprite">[1]</a>
 </li>
-          <li><a href="api/tilemap.html#tm.tile.sprite">(tm.tile method)</a>
+          <li><a href="api/tilemap.html#tm.tile.sprite">(tm.tile method)</a>, <a href="api/tilemap.html#tm.tile.sprite">[1]</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/motion.html#motion.start">start() (in module motion)</a>
 </li>
         <li><a href="api/style.html#style.stencil">stencil() (in module style)</a>, <a href="api/style.html#style.stencil">[1]</a>
@@ -2911,7 +2925,9 @@
 </li>
         <li><a href="api/tilemap.html#module-tm">tm (module)</a>
 </li>
-        <li><a href="api/tilemap.html#tm.tm.layer.id">tm.tm.layer.id (attribute)</a>, <a href="api/tilemap.html#tm.tm.layer.id">[1]</a>
+        <li><a href="api/tilemap.html#tm.tm.layer.id">tm.tm.layer.id (attribute)</a>
+</li>
+        <li><a href="api/tilemap.html#tm.tm.layer.name">tm.tm.layer.name (attribute)</a>
 </li>
         <li><a href="api/tilemap.html#tm.tm.layer.offset">tm.tm.layer.offset (attribute)</a>
 </li>
@@ -2927,10 +2943,10 @@
 </li>
         <li><a href="api/tween.html#tween.to">to() (tween method)</a>
 </li>
-        <li><a href="api/mesh.html#mesh.torus">torus() (mesh static method)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/mesh.html#mesh.torus">torus() (mesh static method)</a>
+</li>
         <li><a href="api/mesh.html#mesh.torusKnot">torusKnot() (mesh static method)</a>
 </li>
         <li><a href="api/input.html#touch">touch (built-in class)</a>

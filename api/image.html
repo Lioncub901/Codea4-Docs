@@ -459,14 +459,135 @@
 </dl>
 </dd></dl>
 
+<dl class="lua method">
+<dt class="sig sig-object lua" id="image.setPixel">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">setPixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xPos</span></em>, <em class="sig-param"><span class="pre">yPos</span></em>, <em class="sig-param"><span class="pre">pixelColor</span></em><span class="sig-paren">)</span><a class="headerlink" href="#image.setPixel" title="Link to this definition">¶</a></dt>
+<dd><p>Sets an inputed position to a new color</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">integer</span></code></span>) – The x position of the image</p></li>
+<li><p><strong>yPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">integer</span></code></span>) – The y position of the image</p></li>
+<li><p><strong>pixelColor</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">color</span></code></span>) – The color to change the pixel to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="image.setValue">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">setValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xPos</span></em>, <em class="sig-param"><span class="pre">yPos</span></em>, <em class="sig-param"><span class="pre">r</span></em>, <em class="sig-param"><span class="pre">g</span></em>, <em class="sig-param"><span class="pre">b</span></em>, <em class="sig-param"><span class="pre">a</span></em><span class="sig-paren">)</span><a class="headerlink" href="#image.setValue" title="Link to this definition">¶</a></dt>
+<dd><p>Same as set pixel but the inputted color value are from 0 to 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">integer</span></code></span>) – The x position of the image</p></li>
+<li><p><strong>yPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">integer</span></code></span>) – The y position of the image</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="image.setForEach">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">setForEach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loopingFunction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#image.setForEach" title="Link to this definition">¶</a></dt>
+<dd><p>Loop over each pixel of the image and set its color value (0 to 1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>loopingFunction</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">function</span></code></span>) – The function to loop over</p>
+</dd>
+</dl>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">How to set the pixels of an image</span><a class="headerlink" href="#id2" title="Link to this code">¶</a></div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nv">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">image</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">)</span>
+
+<span class="nv">img</span><span class="p">:</span><span class="nf">setForEach</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="p">)</span>
+<span class="w">   </span><span class="kr">return</span><span class="w"> </span><span class="nb">math.random</span><span class="p">(),</span><span class="w"> </span><span class="nb">math.random</span><span class="p">(),</span><span class="w"> </span><span class="nb">math.random</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span>
+<span class="kr">end</span><span class="p">)</span>
+
+<span class="nv">img</span><span class="p">:</span><span class="nf">apply</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="image.apply">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#image.apply" title="Link to this definition">¶</a></dt>
+<dd><p>Applys all the colors that were set</p>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="image.readback">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">readback</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">immediately</span> <span class="pre">=</span> <span class="pre">true</span></em>, <em class="sig-param"><span class="pre">includeMips</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#image.readback" title="Link to this definition">¶</a></dt>
+<dd><p>Allows the user to get the image’s color data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>immediately</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">boolean</span></code></span>) – Whether the image should allow reading immediately</p></li>
+<li><p><strong>includeMips</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">boolean</span></code></span>) – Whether the mip maps should be included</p></li>
+</ul>
+</dd>
+</dl>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">How to read the pixel values of an image</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- img is a image</span>
+
+<span class="nv">img</span><span class="p">:</span><span class="nf">readback</span><span class="p">()</span><span class="w"> </span><span class="c1">-- allows reading the pixels of the image</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">pixelColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">color</span><span class="p">(</span><span class="nv">img</span><span class="p">:</span><span class="nf">getPixel</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="image.getPixel">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">getPixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xPos</span></em>, <em class="sig-param"><span class="pre">yPos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#image.getPixel" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the color at the inputted position (0 to 255)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">integer</span></code></span>) – The x position of the image</p></li>
+<li><p><strong>yPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">integer</span></code></span>) – The y position of the image</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The colors at the inputted position (r, g, b, a) (0 to 255)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number,</span> <span class="pre">number,</span> <span class="pre">number,</span> <span class="pre">number</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="lua method">
+<dt class="sig sig-object lua" id="image.getValue">
+<em class="property"> </em><span class="sig-name descname"><span class="pre">getValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xPos</span></em>, <em class="sig-param"><span class="pre">yPos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#image.getValue" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the color values at the inputted position (0 to 1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">integer</span></code></span>) – The x position of the image</p></li>
+<li><p><strong>yPos</strong> (<span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">integer</span></code></span>) – The y position of the image</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The color values at the inputted position (r, g, b, a) (0 to 1)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref lua lua-class docutils literal notranslate"><span class="pre">number,</span> <span class="pre">number,</span> <span class="pre">number,</span> <span class="pre">number</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <section id="image-formats">
 <h2>Image Formats<a class="headerlink" href="#image-formats" title="Link to this heading">¶</a></h2>
 <p>Here is a list of all currently available image formats</p>
-<div class="table-wrapper colwidths-given docutils container" id="id2">
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-text">Available Image Formats</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id4">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Available Image Formats</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
 <colgroup>
 <col style="width: 37.5%" />
 <col style="width: 25.0%" />
@@ -805,8 +926,8 @@
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">image.slice</span></span><a class="headerlink" href="#image.slice" title="Link to this definition">¶</a></dt>
 <dd><p>A configurable slice of an image. Use with <code class="docutils literal notranslate"><span class="pre">sprite()</span></code> for drawing a portion of an sprite sheet image for more efficient 2D rendering (as opposed to a large number of independ images)</p>
 <p>Create slices using an existing image via the <code class="docutils literal notranslate"><span class="pre">image.slice</span></code> property. Slices can be configured using a fluent syntax, allowing for rotation, flipping and 9-patch stretching among other things</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Creating slices</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Creating slices</span><a class="headerlink" href="#id5" title="Link to this code">¶</a></div>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
 <span class="w">   </span><span class="nv">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">image</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="nv">asset</span><span class="p">.</span><span class="py">builtin</span><span class="p">.</span><span class="py">UI</span><span class="p">.</span><span class="py">Grey_Button_10</span><span class="p">)</span>
 
