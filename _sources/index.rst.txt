@@ -25,7 +25,15 @@ Codea 4
    :caption: Manual:
 
    manual
-   manual/codea_3x
+   manual/using_codea/project_browser
+   manual/using_codea/projects
+   manual/using_codea/collections
+   manual/using_codea/sharing
+   manual/using_codea/cloud
+   manual/using_codea/files
+   manual/using_codea/air_code
+   manual/using_codea/tools
+   manual/using_codea/settings
    manual/codea
    manual/drawing
    manual/sound
@@ -34,19 +42,26 @@ Codea 4
    manual/input
    manual/physics2d
    manual/physics3d
+   manual/camera_effects
+   manual/display
+   manual/animation
+   manual/native
    manual/scenes
    manual/shaders
+   manual/vectors
 
 .. toctree::
    :maxdepth: 2
    :caption: API:
 
    api
+   api/legacy
    api/lua
    api/math_types
    api/color
    api/graphics
    api/style
+   api/font
    api/matrix
    api/input
    api/image
@@ -56,12 +71,12 @@ Codea 4
    api/gpu_noise_lib
    api/material
    api/sound
+   api/mic
    api/scene
    api/entity
    api/camera
    api/light
    api/tween
-   api/time
    api/ui
    api/motion
    api/require
@@ -70,14 +85,13 @@ Codea 4
    api/file
    api/physics2d
    api/physics3d
-   api/tilemap
-   api/animation
+   api/voxel
    api/pick
    api/viewer
+   api/hinge
    api/inspector
    api/device
    api/storage
-
 
 Indices and tables
 ==================

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="scene" href="scene.html" /><link rel="prev" title="material" href="material.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Microphone" href="mic.html" /><link rel="prev" title="material" href="material.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.01.29 -->
-        <title>sound - Codea 4.0 documentation</title>
+        <title>Sound - Codea 4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -161,26 +161,41 @@
   <p class="caption" role="heading"><span class="caption-text">Manual:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../manual.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/codea_3x.html">Migration from Codea 3.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/project_browser.html">The project browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/projects.html">Creating and customizing projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/collections.html">Organizing project collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/sharing.html">Sharing and exporting projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/cloud.html">Local, iCloud, and collaboration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/files.html">Accessing projects in Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/air_code.html">Air Code: work from your computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/tools.html">Reference, Assets, and Shader Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/settings.html">Useful settings and backups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/codea.html">How Codea Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/drawing.html">Drawing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/sound.html">Sound</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/assets.html">Assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/file_operations.html">File Operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/input.html">Input</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/physics2d.html">2D Physics (Box 2D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/physics2d.html">2D Physics (Box2D)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/physics3d.html">3D Physics (Bullet 3D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/camera_effects.html">Camera Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/display.html">Display and Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/animation.html">Animating Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/native.html">Using Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/scenes.html">Scenes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/shaders.html">Shaders and Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/vectors.html">Using Vectors</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../api.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legacy.html">Legacy Compatibility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lua.html">lua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="math_types.html">math types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math_types.html">Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="color.html">color</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graphics.html">graphics commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">Drawing Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="style.html">style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="font.html">font</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matrix.html">matrix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input.html">input</a></li>
 <li class="toctree-l1"><a class="reference internal" href="image.html">Images Overview</a></li>
@@ -190,28 +205,27 @@
 <li class="toctree-l1"><a class="reference internal" href="string.html">string</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gpu_noise_lib.html">GPU Noise Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="material.html">material</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">sound</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mic.html">Microphone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scene.html">scene</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entity.html">entity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tween.html">tween</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui.html">ui</a></li>
-<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#device-orientation">Device Orientation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#magnetic-field-data">Magnetic Field Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="require.html">require</a></li>
 <li class="toctree-l1"><a class="reference internal" href="objc.html">objc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pasteboard.html">pasteboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pasteboard.html">Pasteboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics2d.html">physics2d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics3d.html">physics3d</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tilemap.html">tilemap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="animation.html">animation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voxel.html">voxel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pick.html">pick</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer.html">viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hinge.html">hinge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inspector.html">inspector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device.html">device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="storage.html">storage</a></li>
@@ -250,50 +264,8 @@
         </div>
         <article role="main">
           <section id="sound">
-<h1>sound<a class="headerlink" href="#sound" title="Link to this heading">¶</a></h1>
+<h1>Sound<a class="headerlink" href="#sound" title="Link to this heading">¶</a></h1>
 <p id="module-sound">The sound module provides a way to play and manage sound effects and background music</p>
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.SOUND_COIN">
-<span class="sig-name descname"><span class="pre">SOUND_COIN</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#sound.sound.SOUND_COIN" title="Link to this definition">¶</a></dt>
-<dd><p>Procedural coin sound preset (SFXR)</p>
-</dd></dl>
-
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.SOUND_LASER">
-<span class="sig-name descname"><span class="pre">SOUND_LASER</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#sound.sound.SOUND_LASER" title="Link to this definition">¶</a></dt>
-<dd><p>Procedural laser sound preset (SFXR)</p>
-</dd></dl>
-
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.SOUND_EXPLOSION">
-<span class="sig-name descname"><span class="pre">SOUND_EXPLOSION</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#sound.sound.SOUND_EXPLOSION" title="Link to this definition">¶</a></dt>
-<dd><p>Procedural explosion sound preset (SFXR)</p>
-</dd></dl>
-
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.SOUND_POWERUP">
-<span class="sig-name descname"><span class="pre">SOUND_POWERUP</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#sound.sound.SOUND_POWERUP" title="Link to this definition">¶</a></dt>
-<dd><p>Procedural powerup sound preset (SFXR)</p>
-</dd></dl>
-
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.SOUND_HURT">
-<span class="sig-name descname"><span class="pre">SOUND_HURT</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#sound.sound.SOUND_HURT" title="Link to this definition">¶</a></dt>
-<dd><p>Procedural hurt sound preset (SFXR)</p>
-</dd></dl>
-
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.SOUND_JUMP">
-<span class="sig-name descname"><span class="pre">SOUND_JUMP</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#sound.sound.SOUND_JUMP" title="Link to this definition">¶</a></dt>
-<dd><p>Procedural jump sound preset (SFXR)</p>
-</dd></dl>
-
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.SOUND_BLIP">
-<span class="sig-name descname"><span class="pre">SOUND_BLIP</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#sound.sound.SOUND_BLIP" title="Link to this definition">¶</a></dt>
-<dd><p>Procedural blip sound preset (SFXR)</p>
-</dd></dl>
-
 <dl class="lua staticmethod">
 <dt class="sig sig-object lua" id="sound.play">
 <em class="property"><span class="pre">static</span> </em><span class="sig-prename descclassname"><span class="pre">sound.</span></span><span class="sig-name descname"><span class="pre">play</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">preset</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">seed</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sound.play" title="Link to this definition">¶</a></dt>
@@ -405,12 +377,6 @@
 <dd><p>Gets the length of this sound source (in seconds)</p>
 </dd></dl>
 
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.source.key">
-<span class="sig-name descname"><span class="pre">key</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">assetKey</span><a class="headerlink" href="#sound.sound.source.key" title="Link to this definition">¶</a></dt>
-<dd><p>The asset key for this sound (if it has one)</p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="lua class">
@@ -448,36 +414,54 @@
 <dd><p>Get/set the current time of the sound instances play head (in seconds)</p>
 </dd></dl>
 
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.instance.samplerate">
-<span class="sig-name descname"><span class="pre">samplerate</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#sound.sound.instance.samplerate" title="Link to this definition">¶</a></dt>
-<dd><p>Get the sample rate of the sound instance.</p>
-</dd></dl>
-
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.instance.amplitude">
-<span class="sig-name descname"><span class="pre">amplitude</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#sound.sound.instance.amplitude" title="Link to this definition">¶</a></dt>
-<dd><p>Get the amplitude of the sound instance at the current time</p>
-</dd></dl>
-
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.instance.wave">
-<span class="sig-name descname"><span class="pre">wave</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">table&lt;number&gt;</span><a class="headerlink" href="#sound.sound.instance.wave" title="Link to this definition">¶</a></dt>
-<dd><p>Get the wave data of the sound instance at the current time</p>
-</dd></dl>
-
-<dl class="lua attribute">
-<dt class="sig sig-object lua" id="sound.sound.instance.fft">
-<span class="sig-name descname"><span class="pre">fft</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">table&lt;number&gt;</span><a class="headerlink" href="#sound.sound.instance.fft" title="Link to this definition">¶</a></dt>
-<dd><p>Get the fft data of the sound instance at the current time</p>
-</dd></dl>
-
 <dl class="lua method">
 <dt class="sig sig-object lua" id="sound.instance.stop">
 <em class="property"> </em><span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sound.instance.stop" title="Link to this definition">¶</a></dt>
 <dd><p>Stop the sound instance from playing</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="SOUND_COIN">
+<span class="sig-name descname"><span class="pre">SOUND_COIN</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#SOUND_COIN" title="Link to this definition">¶</a></dt>
+<dd><p>Procedural coin sound preset (SFXR)</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="SOUND_LASER">
+<span class="sig-name descname"><span class="pre">SOUND_LASER</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#SOUND_LASER" title="Link to this definition">¶</a></dt>
+<dd><p>Procedural laser sound preset (SFXR)</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="SOUND_EXPLOSION">
+<span class="sig-name descname"><span class="pre">SOUND_EXPLOSION</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#SOUND_EXPLOSION" title="Link to this definition">¶</a></dt>
+<dd><p>Procedural explosion sound preset (SFXR)</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="SOUND_POWERUP">
+<span class="sig-name descname"><span class="pre">SOUND_POWERUP</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#SOUND_POWERUP" title="Link to this definition">¶</a></dt>
+<dd><p>Procedural powerup sound preset (SFXR)</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="SOUND_HURT">
+<span class="sig-name descname"><span class="pre">SOUND_HURT</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#SOUND_HURT" title="Link to this definition">¶</a></dt>
+<dd><p>Procedural hurt sound preset (SFXR)</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="SOUND_JUMP">
+<span class="sig-name descname"><span class="pre">SOUND_JUMP</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#SOUND_JUMP" title="Link to this definition">¶</a></dt>
+<dd><p>Procedural jump sound preset (SFXR)</p>
+</dd></dl>
+
+<dl class="lua attribute">
+<dt class="sig sig-object lua" id="SOUND_BLIP">
+<span class="sig-name descname"><span class="pre">SOUND_BLIP</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">const</span><a class="headerlink" href="#SOUND_BLIP" title="Link to this definition">¶</a></dt>
+<dd><p>Procedural blip sound preset (SFXR)</p>
 </dd></dl>
 
 </section>
@@ -487,12 +471,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="scene.html">
+          <a class="next-page" href="mic.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">scene</div>
+                <div class="title">Microphone</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Motion Overview" href="motion.html" /><link rel="prev" title="time" href="time.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Motion" href="motion.html" /><link rel="prev" title="tween" href="tween.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.01.29 -->
         <title>ui - Codea 4.0 documentation</title>
@@ -161,26 +161,41 @@
   <p class="caption" role="heading"><span class="caption-text">Manual:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../manual.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/codea_3x.html">Migration from Codea 3.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/project_browser.html">The project browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/projects.html">Creating and customizing projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/collections.html">Organizing project collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/sharing.html">Sharing and exporting projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/cloud.html">Local, iCloud, and collaboration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/files.html">Accessing projects in Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/air_code.html">Air Code: work from your computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/tools.html">Reference, Assets, and Shader Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/settings.html">Useful settings and backups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/codea.html">How Codea Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/drawing.html">Drawing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/sound.html">Sound</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/assets.html">Assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/file_operations.html">File Operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/input.html">Input</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/physics2d.html">2D Physics (Box 2D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/physics2d.html">2D Physics (Box2D)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/physics3d.html">3D Physics (Bullet 3D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/camera_effects.html">Camera Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/display.html">Display and Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/animation.html">Animating Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/native.html">Using Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/scenes.html">Scenes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/shaders.html">Shaders and Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/vectors.html">Using Vectors</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../api.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legacy.html">Legacy Compatibility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lua.html">lua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="math_types.html">math types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math_types.html">Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="color.html">color</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graphics.html">graphics commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">Drawing Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="style.html">style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="font.html">font</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matrix.html">matrix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input.html">input</a></li>
 <li class="toctree-l1"><a class="reference internal" href="image.html">Images Overview</a></li>
@@ -190,28 +205,27 @@
 <li class="toctree-l1"><a class="reference internal" href="string.html">string</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gpu_noise_lib.html">GPU Noise Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="material.html">material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sound.html">sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sound.html">Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mic.html">Microphone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scene.html">scene</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entity.html">entity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tween.html">tween</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">ui</a></li>
-<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#device-orientation">Device Orientation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#magnetic-field-data">Magnetic Field Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="require.html">require</a></li>
 <li class="toctree-l1"><a class="reference internal" href="objc.html">objc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pasteboard.html">pasteboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pasteboard.html">Pasteboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics2d.html">physics2d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics3d.html">physics3d</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tilemap.html">tilemap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="animation.html">animation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voxel.html">voxel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pick.html">pick</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer.html">viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hinge.html">hinge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inspector.html">inspector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device.html">device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="storage.html">storage</a></li>
@@ -287,18 +301,18 @@
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nv">scn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">scene</span><span class="p">()</span>
 
 <span class="c1">-- Create an entity to contain the button</span>
-<span class="nv">ent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">scn</span><span class="p">.</span><span class="py">canvas</span><span class="p">:</span><span class="nf">child</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">)</span>
+<span class="nv">ent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">scn</span><span class="p">.</span><span class="py">canvas</span><span class="p">:</span><span class="nf">child</span><span class="p">(</span><span class="s2">"button"</span><span class="p">)</span>
 
 <span class="c1">-- Adjust the button size</span>
 <span class="nv">ent</span><span class="p">.</span><span class="py">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">vec2</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">)</span>
 
 <span class="c1">-- Add a button component</span>
 <span class="nv">btn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ent</span><span class="p">:</span><span class="nf">add</span><span class="p">(</span><span class="nv">ui</span><span class="p">.</span><span class="py">button</span><span class="p">)</span>
-<span class="nv">btn</span><span class="p">.</span><span class="py">label</span><span class="p">.</span><span class="py">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Press Me!&quot;</span>
+<span class="nv">btn</span><span class="p">.</span><span class="py">label</span><span class="p">.</span><span class="py">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Press Me!"</span>
 
 <span class="c1">-- Add a callback function to react to button taps</span>
 <span class="kr">function</span><span class="w"> </span><span class="nc">ent</span><span class="p">:</span><span class="nf">tapped</span><span class="p">()</span>
-<span class="w">   </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tapped!&quot;</span><span class="p">)</span>
+<span class="w">   </span><span class="nb">print</span><span class="p">(</span><span class="s2">"Tapped!"</span><span class="p">)</span>
 <span class="kr">end</span>
 </pre></div>
 </div>
@@ -333,6 +347,13 @@
 </dd></dl>
 
 <dl class="lua attribute">
+<dt class="sig sig-object lua" id="ui.ui.label.font">
+<span class="sig-name descname"><span class="pre">font</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">string</span><a class="headerlink" href="#ui.ui.label.font" title="Link to this definition">¶</a></dt>
+<dd><p>Optional system font name. Use a face such as <code class="docutils literal notranslate"><span class="pre">&quot;Helvetica-Bold&quot;</span></code> for a bold
+label. When omitted, the label uses the current style font.</p>
+</dd></dl>
+
+<dl class="lua attribute">
 <dt class="sig sig-object lua" id="ui.ui.label.fontSize">
 <span class="sig-name descname"><span class="pre">fontSize</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#ui.ui.label.fontSize" title="Link to this definition">¶</a></dt>
 <dd><p>The label’s font size</p>
@@ -345,9 +366,10 @@
 </dd></dl>
 
 <dl class="lua attribute">
-<dt class="sig sig-object lua" id="ui.ui.label.style">
-<span class="sig-name descname"><span class="pre">style</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">flags</span><a class="headerlink" href="#ui.ui.label.style" title="Link to this definition">¶</a></dt>
-<dd><p>The label’s text style</p>
+<dt class="sig sig-object lua" id="ui.ui.label.textRenderer">
+<span class="sig-name descname"><span class="pre">textRenderer</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">string</span><a class="headerlink" href="#ui.ui.label.textRenderer" title="Link to this definition">¶</a></dt>
+<dd><p>The label’s renderer: <code class="docutils literal notranslate"><span class="pre">style.native</span></code> (the default) or <code class="docutils literal notranslate"><span class="pre">style.atlas</span></code>.
+Atlas labels interpret tags; native labels support color emoji.</p>
 </dd></dl>
 
 <dl class="lua attribute">
@@ -357,9 +379,9 @@
 </dd></dl>
 
 <dl class="lua attribute">
-<dt class="sig sig-object lua" id="ui.ui.label.shadowSoftner">
-<span class="sig-name descname"><span class="pre">shadowSoftner</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#ui.ui.label.shadowSoftner" title="Link to this definition">¶</a></dt>
-<dd><p>The softness of the labels text shadow</p>
+<dt class="sig sig-object lua" id="ui.ui.label.shadowRadius">
+<span class="sig-name descname"><span class="pre">shadowRadius</span></span><em class="property"><span class="pre">:</span> </em><span class="pre">number</span><a class="headerlink" href="#ui.ui.label.shadowRadius" title="Link to this definition">¶</a></dt>
+<dd><p>The blur radius of the label’s text shadow, in points</p>
 </dd></dl>
 
 </dd></dl>
@@ -448,18 +470,18 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Motion Overview</div>
+                <div class="title">Motion</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="time.html">
+          <a class="prev-page" href="tween.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">time</div>
+                <div class="title">tween</div>
                 
               </div>
             </a>

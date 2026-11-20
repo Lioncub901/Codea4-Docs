@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sound" href="sound.html" /><link rel="prev" title="GPU Noise Library" href="gpu_noise_lib.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Sound" href="sound.html" /><link rel="prev" title="GPU Noise Library" href="gpu_noise_lib.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.01.29 -->
         <title>material - Codea 4.0 documentation</title>
@@ -161,26 +161,41 @@
   <p class="caption" role="heading"><span class="caption-text">Manual:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../manual.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/codea_3x.html">Migration from Codea 3.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/project_browser.html">The project browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/projects.html">Creating and customizing projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/collections.html">Organizing project collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/sharing.html">Sharing and exporting projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/cloud.html">Local, iCloud, and collaboration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/files.html">Accessing projects in Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/air_code.html">Air Code: work from your computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/tools.html">Reference, Assets, and Shader Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/using_codea/settings.html">Useful settings and backups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/codea.html">How Codea Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/drawing.html">Drawing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/sound.html">Sound</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/assets.html">Assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/file_operations.html">File Operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/input.html">Input</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/physics2d.html">2D Physics (Box 2D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/physics2d.html">2D Physics (Box2D)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/physics3d.html">3D Physics (Bullet 3D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/camera_effects.html">Camera Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/display.html">Display and Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/animation.html">Animating Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/native.html">Using Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/scenes.html">Scenes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/shaders.html">Shaders and Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/vectors.html">Using Vectors</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../api.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legacy.html">Legacy Compatibility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lua.html">lua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="math_types.html">math types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math_types.html">Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="color.html">color</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graphics.html">graphics commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">Drawing Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="style.html">style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="font.html">font</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matrix.html">matrix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input.html">input</a></li>
 <li class="toctree-l1"><a class="reference internal" href="image.html">Images Overview</a></li>
@@ -190,28 +205,27 @@
 <li class="toctree-l1"><a class="reference internal" href="string.html">string</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gpu_noise_lib.html">GPU Noise Library</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sound.html">sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sound.html">Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mic.html">Microphone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scene.html">scene</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entity.html">entity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="camera.html">camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="light.html">light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tween.html">tween</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time.html">time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui.html">ui</a></li>
-<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="motion.html#motion">Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#device-orientation">Device Orientation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion.html#magnetic-field-data">Magnetic Field Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="require.html">require</a></li>
 <li class="toctree-l1"><a class="reference internal" href="objc.html">objc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pasteboard.html">pasteboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pasteboard.html">Pasteboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics2d.html">physics2d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics3d.html">physics3d</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tilemap.html">tilemap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="animation.html">animation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voxel.html">voxel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pick.html">pick</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer.html">viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hinge.html">hinge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inspector.html">inspector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device.html">device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="storage.html">storage</a></li>
@@ -258,6 +272,7 @@
 <p>Materials can also be saved/loaded, although they will need to access to the original shader asset</p>
 <p><strong>The Standard Material</strong></p>
 <p>The standard material is built on the standard uber-shader, providing a convenient all purpose material</p>
+<p>Color properties take ordinary colors, the same as <code class="docutils literal notranslate"><span class="pre">style.fill</span></code> and <code class="docutils literal notranslate"><span class="pre">color(...)</span></code> everywhere else in Codea, and are converted for lighting automatically. Reading a color property gives back the color that was set</p>
 <div class="table-wrapper colwidths-given docutils container" id="id1">
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Standard Material Properties</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
@@ -291,12 +306,12 @@
 <td><p>Current tint mode: <code class="docutils literal notranslate"><span class="pre">TINT_NONE</span></code>, <code class="docutils literal notranslate"><span class="pre">TINT_OPAQUE</span></code>, <code class="docutils literal notranslate"><span class="pre">TINT_TRANSPARENT</span></code>, <code class="docutils literal notranslate"><span class="pre">TINT_ADD</span></code>, <code class="docutils literal notranslate"><span class="pre">TINT_MULTIPLY</span></code>, <code class="docutils literal notranslate"><span class="pre">TINT_SCREEN</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tintColor</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">vec4</span></code> (linear color)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">color</span></code></p></td>
 <td><p>All</p></td>
 <td><p>Tint color overlay blended using <code class="docutils literal notranslate"><span class="pre">tintBlend</span></code> mode</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">color</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">vec4</span></code> (srgb color)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">color</span></code></p></td>
 <td><p>All</p></td>
 <td><p>Diffuse albedo color of the surface</p></td>
 </tr>
@@ -306,7 +321,7 @@
 <td><p>Diffuse albedo color texture map</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">emissive</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">vec4</span></code> (srgb hdr color)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">color</span></code></p></td>
 <td><p>All</p></td>
 <td><p>Emissive color of the surface (can be more than 1)</p></td>
 </tr>
@@ -450,7 +465,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">sound</div>
+                <div class="title">Sound</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
